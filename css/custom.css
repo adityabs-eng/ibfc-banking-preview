@@ -190,36 +190,22 @@ img, iframe {
   }
 }
 
-/* Scroll margin offset so sticky header & mobile section bar never cover titles */
+/* Scroll margin offset so sticky header never covers section titles */
 section, [id] {
-  scroll-margin-top: 115px;
+  scroll-margin-top: 85px;
 }
 
 @media (max-width: 767px) {
   section, [id] {
-    scroll-margin-top: 110px;
+    scroll-margin-top: 75px;
   }
 }
 
-/* Mobile Quick Section Bar Active Pill */
-.section-pill.active {
-  background-color: #f59e0b !important;
-  color: #06283f !important;
-  font-weight: 700 !important;
-  border-color: #f59e0b !important;
+/* Off-canvas sidebar transition */
+#mobile-sidebar {
+  will-change: transform;
 }
 
-/* Floating Quick Jump Widget */
-.floating-widget-btn {
-  box-shadow: 0 10px 25px -3px rgba(10, 59, 92, 0.4), 0 4px 6px -2px rgba(10, 59, 92, 0.2);
-}
-
-/* Bottom Sheet Animation */
-@keyframes slideUp {
-  from { transform: translateY(100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.animate-slide-up {
-  animation: slideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+#mobile-sidebar-backdrop {
+  will-change: opacity;
 }

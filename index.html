@@ -111,36 +111,104 @@
         </div>
       </div>
     </div>
-
-    <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-6 bg-white border-t border-slate-200 shadow-xl transition-all">
-      <div class="flex flex-col space-y-3">
-        <a href="index.html" class="px-3 py-2 rounded-md text-base font-semibold text-primary bg-slate-50">Home</a>
-        <a href="about.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">About Us</a>
-        <a href="services.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Services</a>
-        <a href="partner.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Partner With Us</a>
-        <a href="contact.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Contact Us</a>
-        <div class="pt-2">
-          <a href="partner.html#rfp-form" class="w-full text-center block bg-primary text-white py-2.5 rounded-lg font-semibold shadow">Request Proposal</a>
-        </div>
-      </div>
-    </div>
   </header>
 
-  <!-- Mobile Quick Section Jumper (Sticky Horizontal Strip on Mobile/Small Tablet) -->
-  <div class="md:hidden bg-slate-900/95 backdrop-blur-md text-white border-b border-slate-800 py-2 px-3 sticky top-[64px] z-40 shadow-sm">
-    <div class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-none text-xs">
-      <span class="text-accent-amber font-bold flex items-center gap-1 shrink-0 pl-1 text-[11px]">
-        <i class="fa-solid fa-compass"></i> Sections:
-      </span>
-      <a href="#who-we-are" class="section-pill px-2.5 py-1 rounded-full bg-white/10 hover:bg-primary border border-white/10 text-slate-200 hover:text-white shrink-0 transition text-[11px]">Who We Are</a>
-      <a href="#why-choose-us" class="section-pill px-2.5 py-1 rounded-full bg-white/10 hover:bg-primary border border-white/10 text-slate-200 hover:text-white shrink-0 transition text-[11px]">Why IBFC</a>
-      <a href="#impact-counters" class="section-pill px-2.5 py-1 rounded-full bg-white/10 hover:bg-primary border border-white/10 text-slate-200 hover:text-white shrink-0 transition text-[11px]">₹750+ Cr Impact</a>
-      <a href="#banking-partners" class="section-pill px-2.5 py-1 rounded-full bg-white/10 hover:bg-primary border border-white/10 text-slate-200 hover:text-white shrink-0 transition text-[11px]">Partners</a>
-      <a href="#services-overview" class="section-pill px-2.5 py-1 rounded-full bg-white/10 hover:bg-primary border border-white/10 text-slate-200 hover:text-white shrink-0 transition text-[11px]">Services</a>
-      <a href="#consultation-cta" class="section-pill px-2.5 py-1 rounded-full bg-accent-amber/20 hover:bg-accent-amber text-amber-300 hover:text-slate-900 border border-accent-amber/40 shrink-0 transition text-[11px] font-semibold">Consultation</a>
+  <!-- Mobile Navigation Off-Canvas Sidebar Backdrop & Drawer -->
+  <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+
+  <aside id="mobile-sidebar" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-[340px] bg-white z-50 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out translate-x-full overflow-hidden" aria-label="Mobile Navigation Sidebar">
+    
+    <!-- Sidebar Header -->
+    <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary-dark via-primary to-accent-blue flex items-center justify-center text-white shadow">
+          <span class="font-extrabold text-base tracking-tighter">IB</span>
+        </div>
+        <div>
+          <span class="text-lg font-black text-primary leading-none block">IBFC<span class="text-accent-amber">.</span></span>
+          <span class="text-[9px] uppercase tracking-wider font-bold text-slate-500 block mt-0.5">Corporate Navigation</span>
+        </div>
+      </div>
+      <button id="close-sidebar-btn" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-primary flex items-center justify-center transition focus:outline-none" aria-label="Close Sidebar">
+        <i class="fa-solid fa-xmark text-base"></i>
+      </button>
     </div>
-  </div>
+
+    <!-- Sidebar Scrollable Body -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-6">
+      
+      <!-- Primary Pages Navigation -->
+      <div>
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2 px-2">Main Pages</span>
+        <nav class="space-y-1">
+          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-primary bg-primary/10 transition">
+            <i class="fa-solid fa-house w-5 text-center text-accent-amber"></i>
+            <span>Home</span>
+          </a>
+          <a href="about.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+            <i class="fa-solid fa-building w-5 text-center text-primary"></i>
+            <span>About Us</span>
+          </a>
+          <a href="services.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+            <i class="fa-solid fa-layer-group w-5 text-center text-primary"></i>
+            <span>Services</span>
+          </a>
+          <a href="partner.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+            <i class="fa-solid fa-handshake w-5 text-center text-primary"></i>
+            <span>Partner With Us</span>
+          </a>
+          <a href="contact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+            <i class="fa-solid fa-headset w-5 text-center text-primary"></i>
+            <span>Contact Us</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Jump To Page Sections (Clean, categorized in sidebar) -->
+      <div class="pt-3 border-t border-slate-100">
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2 px-2">Jump to Page Section</span>
+        <div class="space-y-1 text-xs">
+          <a href="#who-we-are" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
+            <i class="fa-solid fa-circle text-[6px] text-accent-amber"></i>
+            <span>Who We Are</span>
+          </a>
+          <a href="#why-choose-us" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
+            <i class="fa-solid fa-circle text-[6px] text-emerald-500"></i>
+            <span>Why Choose Us</span>
+          </a>
+          <a href="#impact-counters" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
+            <i class="fa-solid fa-circle text-[6px] text-sky-500"></i>
+            <span>Impact Metrics (₹750+ Cr)</span>
+          </a>
+          <a href="#banking-partners" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
+            <i class="fa-solid fa-circle text-[6px] text-indigo-500"></i>
+            <span>20+ Banking Partners</span>
+          </a>
+          <a href="#services-overview" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
+            <i class="fa-solid fa-circle text-[6px] text-primary"></i>
+            <span>Core BFSI Services</span>
+          </a>
+          <a href="#consultation-cta" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
+            <i class="fa-solid fa-circle text-[6px] text-amber-500"></i>
+            <span>Schedule Consultation</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sidebar Footer Action -->
+    <div class="p-4 border-t border-slate-200 bg-slate-50 space-y-2.5">
+      <a href="partner.html#rfp-form" class="w-full text-center block bg-primary hover:bg-primary-light text-white py-2.5 px-4 rounded-xl font-bold text-sm shadow transition flex items-center justify-center gap-2">
+        <span>Request Proposal</span>
+        <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+      <div class="text-[11px] text-slate-500 text-center">
+        Patna HQ: <a href="tel:+916122508800" class="text-primary font-bold hover:underline">+91 612 250 8800</a>
+      </div>
+    </div>
+
+  </aside>
 
   <!-- Hero Carousel Section -->
   <section id="hero-slider-container" class="relative h-[85vh] min-h-[580px] sm:min-h-[550px] w-full overflow-hidden bg-slate-900">
@@ -846,79 +914,10 @@
     </div>
   </div>
 
-  <!-- Floating Mobile Quick Action Controls (Bottom Right) -->
-  <div class="fixed bottom-5 right-4 z-40 flex flex-col items-end gap-2.5">
-    <!-- Scroll To Top Button -->
-    <button id="scroll-to-top" class="opacity-0 pointer-events-none w-10 h-10 rounded-full bg-slate-900/90 text-white border border-slate-700 shadow-lg flex items-center justify-center hover:bg-primary transition-all duration-300" aria-label="Scroll to Top">
-      <i class="fa-solid fa-arrow-up text-xs"></i>
-    </button>
-    <!-- Quick Jump Pill Button (Mobile & Tablet) -->
-    <button id="open-quick-jump" class="md:hidden floating-widget-btn bg-primary hover:bg-primary-light text-white px-3.5 py-2.5 rounded-full text-xs font-bold shadow-xl flex items-center gap-2 border border-sky-400/30 transition-transform active:scale-95" aria-label="Open Section Jump Drawer">
-      <i class="fa-solid fa-bars-staggered text-accent-amber text-xs"></i>
-      <span>Sections</span>
-    </button>
-  </div>
-
-  <!-- Mobile Quick Jump Bottom Sheet Drawer -->
-  <div id="quick-jump-sheet" class="hidden fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-end justify-center transition-all">
-    <div class="bg-white rounded-t-3xl w-full max-w-lg p-5 border-t border-slate-200 shadow-2xl animate-slide-up max-h-[80vh] overflow-y-auto">
-      <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
-        <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-primary text-accent-amber flex items-center justify-center text-xs">
-            <i class="fa-solid fa-compass"></i>
-          </div>
-          <span class="font-bold text-slate-900 text-sm">Jump to Page Section</span>
-        </div>
-        <button id="close-quick-jump" class="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-      </div>
-      
-      <div class="grid grid-cols-2 gap-2 text-xs">
-        <a href="#who-we-are" class="p-3 rounded-xl bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 transition group flex flex-col gap-1">
-          <div class="font-bold text-slate-800 group-hover:text-white flex items-center gap-1.5">
-            <i class="fa-solid fa-building text-accent-amber"></i> Who We Are
-          </div>
-          <span class="text-[10px] text-slate-500 group-hover:text-slate-200">Decade of BFSI Leadership</span>
-        </a>
-
-        <a href="#why-choose-us" class="p-3 rounded-xl bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 transition group flex flex-col gap-1">
-          <div class="font-bold text-slate-800 group-hover:text-white flex items-center gap-1.5">
-            <i class="fa-solid fa-award text-emerald-600"></i> Why Choose Us
-          </div>
-          <span class="text-[10px] text-slate-500 group-hover:text-slate-200">6 Strategic Core Pillars</span>
-        </a>
-
-        <a href="#impact-counters" class="p-3 rounded-xl bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 transition group flex flex-col gap-1">
-          <div class="font-bold text-slate-800 group-hover:text-white flex items-center gap-1.5">
-            <i class="fa-solid fa-chart-line text-sky-600"></i> Impact Metrics
-          </div>
-          <span class="text-[10px] text-slate-500 group-hover:text-slate-200">₹750+ Cr Quarterly Recovery</span>
-        </a>
-
-        <a href="#banking-partners" class="p-3 rounded-xl bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 transition group flex flex-col gap-1">
-          <div class="font-bold text-slate-800 group-hover:text-white flex items-center gap-1.5">
-            <i class="fa-solid fa-handshake text-indigo-600"></i> Bank Partners
-          </div>
-          <span class="text-[10px] text-slate-500 group-hover:text-slate-200">20+ Scheduled Banks</span>
-        </a>
-
-        <a href="#services-overview" class="p-3 rounded-xl bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 transition group flex flex-col gap-1">
-          <div class="font-bold text-slate-800 group-hover:text-white flex items-center gap-1.5">
-            <i class="fa-solid fa-layer-group text-primary"></i> Core Services
-          </div>
-          <span class="text-[10px] text-slate-500 group-hover:text-slate-200">Debt, Sourcing & Helplines</span>
-        </a>
-
-        <a href="#consultation-cta" class="p-3 rounded-xl bg-amber-50 hover:bg-accent-amber hover:text-slate-900 border border-amber-200 transition group flex flex-col gap-1">
-          <div class="font-bold text-amber-900 group-hover:text-slate-900 flex items-center gap-1.5">
-            <i class="fa-solid fa-phone"></i> Consultation
-          </div>
-          <span class="text-[10px] text-amber-700 group-hover:text-slate-900">Get in touch directly</span>
-        </a>
-      </div>
-    </div>
-  </div>
+  <!-- Floating Scroll To Top Button -->
+  <button id="scroll-to-top" class="fixed bottom-5 right-4 z-40 opacity-0 pointer-events-none w-11 h-11 rounded-full bg-primary hover:bg-primary-light text-white shadow-xl flex items-center justify-center border border-white/20 transition-all duration-300 transform active:scale-95" aria-label="Scroll to Top">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
