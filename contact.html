@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | IBFC - Integrated Banking & Financial Corporation</title>
+  <meta name="description" content="Get in touch with IBFC Consultants. Reach out to our corporate headquarters, regional operational hubs, or submit your banking partnership inquiry.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0a3b5c',
+              light: '#0e5483',
+              dark: '#06283f',
+            },
+            accent: {
+              amber: '#f59e0b',
+              blue: '#0284c7',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1B2PpLwq3x5p1Nn9KhrlN7p1GFhFdomcFZC2x5VgrxGk3i1Pj4lC2Nf3PzLMZw5q5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-primary-dark text-slate-300 text-xs py-2 px-4 border-b border-primary-light/30">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-phone text-accent-amber"></i>
+          <a href="tel:+916122508800" class="hover:text-white transition">+91 612 250 8800</a>
+        </span>
+        <span class="hidden md:flex items-center gap-2">
+          <i class="fa-solid fa-envelope text-accent-amber"></i>
+          <a href="mailto:info@ibfcconsult.com" class="hover:text-white transition">info@ibfcconsult.com</a>
+        </span>
+        <span class="hidden lg:flex items-center gap-2 text-slate-400">
+          <i class="fa-solid fa-certificate text-emerald-400"></i>
+          ISO 9001:2015 &amp; ISO/IEC 27001:2022 Certified
+        </span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <span class="hidden sm:inline text-slate-300">
+          <i class="fa-solid fa-location-dot text-rose-400 mr-1"></i> Headquartered in Patna, Bihar | 25+ States
+        </span>
+        <div class="flex items-center gap-3 border-l border-slate-700 pl-3">
+          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header id="main-header" class="sticky top-0 z-50 glass-header py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-primary-dark via-primary to-accent-blue flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
+            <span class="font-extrabold text-2xl tracking-tighter">IB</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-black text-primary tracking-tight group-hover:text-primary-light transition-colors">
+              IBFC<span class="text-accent-amber">.</span>
+            </span>
+            <span class="text-[10px] uppercase tracking-widest font-bold text-slate-500">
+              Integrated Banking &amp; Financial Corp
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-7">
+          <a href="index.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Home</a>
+          <a href="about.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">About Us</a>
+          <a href="services.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Services</a>
+          <a href="partner.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Partner With Us</a>
+          <a href="contact.html" class="nav-link active text-sm font-semibold hover:text-primary transition py-1">Contact Us</a>
+        </nav>
+
+        <!-- Header CTA Button -->
+        <div class="hidden md:flex items-center gap-4">
+          <a href="partner.html#rfp-form" class="bg-primary hover:bg-primary-light text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+            <span>Request Proposal</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
+            <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-6 bg-white border-t border-slate-200 shadow-xl transition-all">
+      <div class="flex flex-col space-y-3">
+        <a href="index.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Home</a>
+        <a href="about.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">About Us</a>
+        <a href="services.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Services</a>
+        <a href="partner.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Partner With Us</a>
+        <a href="contact.html" class="px-3 py-2 rounded-md text-base font-semibold text-primary bg-slate-50">Contact Us</a>
+        <div class="pt-2">
+          <a href="partner.html#rfp-form" class="w-full text-center block bg-primary text-white py-2.5 rounded-lg font-semibold shadow">Request Proposal</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="relative h-[45vh] min-h-[320px] bg-slate-900 flex items-center justify-center text-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1920&q=80" alt="Contact IBFC Banner" class="absolute inset-0 w-full h-full object-cover opacity-25">
+    <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary/80 to-primary-dark/80"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-amber/20 text-accent-amber text-xs font-bold uppercase tracking-wider mb-4 border border-accent-amber/30">
+        <i class="fa-solid fa-headset"></i> We Are Here For You
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white drop-shadow-md mb-4">
+        Contact IBFC Consultants
+      </h1>
+      <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto font-normal">
+        Have questions? Need support? Want to collaborate? We are always here to help — connect with our institutional team anytime.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Contact Section (Matching VGM Consults 2-Column Structure) -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12">
+        
+        <!-- Left Column: Detailed Corporate Contact Information (5 cols) -->
+        <div class="lg:col-span-5 space-y-8">
+          
+          <div>
+            <div class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+              <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+              Get In Touch
+            </div>
+            <h2 class="text-3xl font-extrabold text-primary mb-4">Let's Connect</h2>
+            <p class="text-slate-600 leading-relaxed text-sm">
+              Our regional leadership and institutional onboarding executives are ready to address your queries regarding debt collections, portfolio servicing, technology integration, or careers.
+            </p>
+          </div>
+
+          <!-- Contact Cards -->
+          <div class="space-y-4">
+            
+            <!-- Corporate HQ -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-primary text-accent-amber flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="text-sm">
+                <strong class="block text-slate-900 font-bold text-base mb-1">Corporate Headquarters (Patna)</strong>
+                <p class="text-slate-600 leading-relaxed text-xs">
+                  IBFC Corporate Tower, Plot No. 12, Fraser Road,<br>
+                  Near Dak Bunglow Chowk, Patna,<br>
+                  Bihar - 800001, India.
+                </p>
+              </div>
+            </div>
+
+            <!-- Regional Operations Hub -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center text-xl shrink-0 border border-sky-100">
+                <i class="fa-solid fa-building-flag"></i>
+              </div>
+              <div class="text-sm">
+                <strong class="block text-slate-900 font-bold text-base mb-1">Regional Operation Hubs</strong>
+                <p class="text-slate-600 leading-relaxed text-xs">
+                  <strong>Kolkata:</strong> GRM Tech Park, Action Area-1, New Town - 700156.<br>
+                  <strong>Delhi NCR:</strong> Sector 62, Noida, Uttar Pradesh - 201309.<br>
+                  <strong>Mumbai:</strong> Bandra Kurla Complex (BKC), Mumbai - 400051.
+                </p>
+              </div>
+            </div>
+
+            <!-- Direct Phone Lines -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl shrink-0 border border-amber-100">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="text-sm">
+                <strong class="block text-slate-900 font-bold text-base mb-1">Direct Telephony</strong>
+                <p class="text-slate-600 text-xs">
+                  Patna HQ Desk: <a href="tel:+916122508800" class="text-primary font-semibold hover:underline">+91 612 250 8800</a><br>
+                  National Operations Desk: <a href="tel:+911145128800" class="text-primary font-semibold hover:underline">+91 11 4512 8800</a><br>
+                  HR &amp; Careers: <a href="tel:+918017823938" class="text-primary font-semibold hover:underline">+91 80178 23938</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Email Inboxes -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shrink-0 border border-emerald-100">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="text-sm">
+                <strong class="block text-slate-900 font-bold text-base mb-1">Official Emails</strong>
+                <p class="text-slate-600 text-xs">
+                  General &amp; Partnerships: <a href="mailto:info@ibfcconsult.com" class="text-primary font-semibold hover:underline">info@ibfcconsult.com</a><br>
+                  Careers &amp; Recruitment: <a href="mailto:careers@ibfcconsult.com" class="text-primary font-semibold hover:underline">careers@ibfcconsult.com</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Operating Hours -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl shrink-0 border border-purple-100">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="text-sm">
+                <strong class="block text-slate-900 font-bold text-base mb-1">Operational Hours</strong>
+                <p class="text-slate-600 text-xs">
+                  Monday to Saturday: 9:00 AM – 7:00 PM IST<br>
+                  <span class="text-emerald-600 font-semibold">24/7 BPO &amp; IVR Infrastructure for Bank Partners</span>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Contact Form (7 cols) -->
+        <div class="lg:col-span-7">
+          <div class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xl">
+            <h3 class="text-2xl font-bold text-primary mb-2">Send Us a Direct Message</h3>
+            <p class="text-slate-600 text-sm mb-8">
+              Fill in the form below and our client servicing team will respond promptly.
+            </p>
+
+            <form class="ibfc-form space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Your Full Name *</label>
+                  <input type="text" required placeholder="e.g. Ananya Sen" class="w-full bg-slate-50 border border-slate-300 px-4 py-3 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-primary focus:bg-white focus:outline-none transition">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Contact Number *</label>
+                  <input type="tel" required placeholder="+91 98300 12345" class="w-full bg-slate-50 border border-slate-300 px-4 py-3 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-primary focus:bg-white focus:outline-none transition">
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Email Address *</label>
+                  <input type="email" required placeholder="ananya@example.com" class="w-full bg-slate-50 border border-slate-300 px-4 py-3 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-primary focus:bg-white focus:outline-none transition">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Your Location / City *</label>
+                  <input type="text" required placeholder="e.g. Patna, Kolkata, Delhi, Mumbai" class="w-full bg-slate-50 border border-slate-300 px-4 py-3 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-primary focus:bg-white focus:outline-none transition">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nature of Inquiry *</label>
+                <select required class="w-full bg-slate-50 border border-slate-300 px-4 py-3 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-primary focus:bg-white focus:outline-none transition">
+                  <option value="" disabled selected>Please select inquiry type</option>
+                  <option value="banking-partner">Banking &amp; NBFC Institutional Partnership</option>
+                  <option value="debt-collection">Debt Collection &amp; Risk Advisory</option>
+                  <option value="loan-origination">Loan Origination &amp; Sourcing Services</option>
+                  <option value="careers">Job Application &amp; Career Opportunities</option>
+                  <option value="vendor">Vendor &amp; Technology Partnership</option>
+                  <option value="other">General Inquiries</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Detailed Message *</label>
+                <textarea rows="4" required placeholder="Tell us how we can assist you..." class="w-full bg-slate-50 border border-slate-300 px-4 py-3 rounded-xl text-slate-800 text-sm focus:ring-2 focus:ring-primary focus:bg-white focus:outline-none transition"></textarea>
+              </div>
+
+              <div class="flex items-center gap-2 text-xs text-slate-500">
+                <i class="fa-solid fa-lock text-emerald-600"></i>
+                <span>Your information is protected under ISO/IEC 27001 data privacy guidelines.</span>
+              </div>
+
+              <button type="submit" class="w-full bg-primary hover:bg-primary-light text-white py-3.5 px-6 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Map Embed Section (Matching VGM Location reference) -->
+  <section class="py-12 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <h3 class="text-2xl font-bold text-primary mb-2">Find Our Operational Excellence Centers</h3>
+        <p class="text-slate-600 text-xs sm:text-sm">
+          Seamlessly accessible across major financial centers with high-capacity digital telecom corridors.
+        </p>
+      </div>
+
+      <div class="rounded-3xl overflow-hidden shadow-lg border border-slate-200 h-[380px] bg-slate-200">
+        <iframe 
+          title="IBFC Corporate Headquarters Location - Patna" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14392.204561085223!2d85.1278278!3d25.6080208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed585bc4a0e737%3A0xb386617bbd2ea8a5!2sFraser%20Road%20Area%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000" 
+          class="w-full h-full border-0" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent-blue flex items-center justify-center text-white font-extrabold text-xl shadow">
+              IB
+            </div>
+            <span class="text-2xl font-black text-white tracking-tight">IBFC<span class="text-accent-amber">.</span></span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
+            Integrated Banking &amp; Financial Corporation (IBFC) is India's leading financial intermediary and debt recovery partner, empowering financial institutions through technology, ethics, and pan-India reach.
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="px-3 py-1.5 rounded-md bg-slate-800 text-xs font-semibold text-emerald-400 border border-slate-700">
+              <i class="fa-solid fa-shield-check mr-1.5"></i> ISO 9001:2015
+            </div>
+            <div class="px-3 py-1.5 rounded-md bg-slate-800 text-xs font-semibold text-sky-400 border border-slate-700">
+              <i class="fa-solid fa-lock mr-1.5"></i> ISO/IEC 27001:2022
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Company</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About IBFC</a></li>
+            <li><a href="about.html#story" class="hover:text-white transition">Our Story</a></li>
+            <li><a href="about.html#founders" class="hover:text-white transition">Founders &amp; Leadership</a></li>
+            <li><a href="partner.html" class="hover:text-white transition text-accent-amber font-semibold">Partner With Us</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Key Services</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="services.html#debt-collection" class="hover:text-white transition">Delinquent Debt Collection</a></li>
+            <li><a href="services.html#debt-initiation" class="hover:text-white transition">Debt Initiation &amp; Sourcing</a></li>
+            <li><a href="services.html#client-servicing" class="hover:text-white transition">Inbound Client Servicing</a></li>
+            <li><a href="services.html#telecommunicator" class="hover:text-white transition">Predictive BPO Centers</a></li>
+            <li><a href="services.html#field-recovery" class="hover:text-white transition">Geo-Tagged Field Visits</a></li>
+            <li><a href="services.html#third-party" class="hover:text-white transition">Third Party Verification</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Corporate Contact -->
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Head Office</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            <strong class="text-slate-200">Corporate HQ (Patna):</strong><br>
+            IBFC Corporate Tower, Plot No. 12, Fraser Road,<br>
+            Near Dak Bunglow Chowk, Patna, Bihar - 800001.<br>
+            <span class="text-slate-400 mt-2 block">Regional Hubs: Patna | Kolkata | Delhi NCR | Mumbai | Bengaluru</span>
+          </p>
+          <div class="text-xs space-y-1.5 text-slate-300">
+            <div><i class="fa-solid fa-phone text-accent-amber mr-2"></i> +91 612 250 8800 / +91 11 4512 8800</div>
+            <div><i class="fa-solid fa-envelope text-accent-amber mr-2"></i> info@ibfcconsult.com</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Socials -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>
+          &copy; <span class="current-year"></span> IBFC Consultants Limited. All rights reserved.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300 transition">Terms of Service</a>
+          <a href="#" class="hover:text-slate-300 transition">Fair Practices Code</a>
+          <a href="#" class="hover:text-slate-300 transition">CSR Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Success Modal -->
+  <div id="success-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center relative border border-slate-100 animate-fade-in">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 text-3xl">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3 class="text-2xl font-bold text-slate-900 mb-2">Message Dispatched!</h3>
+      <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+        Thank you for contacting <strong class="text-primary">IBFC Consultants</strong>. Your inquiry has been routed to our corporate relations desk. A team member will respond within 24 business hours.
+      </p>
+      <button class="close-modal-btn w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 px-6 rounded-xl transition shadow">
+        Close &amp; Continue
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

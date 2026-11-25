@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | IBFC - Integrated Banking & Financial Corporation</title>
+  <meta name="description" content="Discover IBFC's journey, our founders' vision, corporate governance, life at IBFC, and cutting-edge technology infrastructure supporting 20+ banks across India.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0a3b5c',
+              light: '#0e5483',
+              dark: '#06283f',
+            },
+            accent: {
+              amber: '#f59e0b',
+              blue: '#0284c7',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1B2PpLwq3x5p1Nn9KhrlN7p1GFhFdomcFZC2x5VgrxGk3i1Pj4lC2Nf3PzLMZw5q5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-primary-dark text-slate-300 text-xs py-2 px-4 border-b border-primary-light/30">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-phone text-accent-amber"></i>
+          <a href="tel:+916122508800" class="hover:text-white transition">+91 612 250 8800</a>
+        </span>
+        <span class="hidden md:flex items-center gap-2">
+          <i class="fa-solid fa-envelope text-accent-amber"></i>
+          <a href="mailto:info@ibfcconsult.com" class="hover:text-white transition">info@ibfcconsult.com</a>
+        </span>
+        <span class="hidden lg:flex items-center gap-2 text-slate-400">
+          <i class="fa-solid fa-certificate text-emerald-400"></i>
+          ISO 9001:2015 &amp; ISO/IEC 27001:2022 Certified
+        </span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <span class="hidden sm:inline text-slate-300">
+          <i class="fa-solid fa-location-dot text-rose-400 mr-1"></i> Headquartered in Patna, Bihar | 25+ States
+        </span>
+        <div class="flex items-center gap-3 border-l border-slate-700 pl-3">
+          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header id="main-header" class="sticky top-0 z-50 glass-header py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-primary-dark via-primary to-accent-blue flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
+            <span class="font-extrabold text-2xl tracking-tighter">IB</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-black text-primary tracking-tight group-hover:text-primary-light transition-colors">
+              IBFC<span class="text-accent-amber">.</span>
+            </span>
+            <span class="text-[10px] uppercase tracking-widest font-bold text-slate-500">
+              Integrated Banking &amp; Financial Corp
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-7">
+          <a href="index.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Home</a>
+          <a href="about.html" class="nav-link active text-sm font-semibold hover:text-primary transition py-1">About Us</a>
+          <a href="services.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Services</a>
+          <a href="partner.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Partner With Us</a>
+          <a href="contact.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Contact Us</a>
+        </nav>
+
+        <!-- Header CTA Button -->
+        <div class="hidden md:flex items-center gap-4">
+          <a href="partner.html#rfp-form" class="bg-primary hover:bg-primary-light text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+            <span>Request Proposal</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
+            <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-6 bg-white border-t border-slate-200 shadow-xl transition-all">
+      <div class="flex flex-col space-y-3">
+        <a href="index.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Home</a>
+        <a href="about.html" class="px-3 py-2 rounded-md text-base font-semibold text-primary bg-slate-50">About Us</a>
+        <a href="services.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Services</a>
+        <a href="partner.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Partner With Us</a>
+        <a href="contact.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Contact Us</a>
+        <div class="pt-2">
+          <a href="partner.html#rfp-form" class="w-full text-center block bg-primary text-white py-2.5 rounded-lg font-semibold shadow">Request Proposal</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="relative h-[45vh] min-h-[320px] bg-slate-900 flex items-center justify-center text-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80" alt="About IBFC Banner" class="absolute inset-0 w-full h-full object-cover opacity-25">
+    <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary/80 to-primary-dark/80"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-amber/20 text-accent-amber text-xs font-bold uppercase tracking-wider mb-4 border border-accent-amber/30">
+        <i class="fa-solid fa-landmark"></i> Corporate Pedigree
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white drop-shadow-md mb-4">
+        About IBFC Consultants
+      </h1>
+      <p class="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto font-normal">
+        A legacy of ethical recovery, deep banking relationships, and technological leadership built over a decade of retail credit operations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Interactive Section Navigator (Matching VGM Dropdown & Tabs) -->
+  <section class="py-8 bg-white border-b border-slate-200 sticky top-[73px] z-30 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="text-primary font-bold text-lg"><i class="fa-solid fa-compass mr-1.5 text-accent-amber"></i> Explore About Us:</span>
+      </div>
+
+      <!-- Desktop Tab Buttons -->
+      <div class="hidden sm:flex items-center gap-2">
+        <button class="about-tab-btn px-5 py-2.5 rounded-xl text-sm font-bold bg-primary text-white shadow-md transition" data-tab="story">
+          <i class="fa-solid fa-book-open mr-2"></i> Our Story &amp; Founders
+        </button>
+        <button class="about-tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:border-primary transition" data-tab="life">
+          <i class="fa-solid fa-briefcase mr-2"></i> Life at IBFC
+        </button>
+        <button class="about-tab-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:border-primary transition" data-tab="tech">
+          <i class="fa-solid fa-microchip mr-2"></i> Technology &amp; Security
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Selector (Exact feature from reference site) -->
+      <div class="sm:hidden w-full relative">
+        <select id="about-tab-select" class="appearance-none w-full bg-slate-50 border border-slate-300 px-4 py-3 rounded-xl text-slate-800 font-semibold focus:ring-2 focus:ring-primary focus:outline-none">
+          <option value="story">📘 Our Story &amp; Founders</option>
+          <option value="life">💼 Life at IBFC</option>
+          <option value="tech">🚀 Technology &amp; Security</option>
+        </select>
+        <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab 1: Our Story Panel -->
+  <div id="tab-story" class="about-tab-panel py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Narrative -->
+      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm mb-16">
+        <div class="max-w-4xl mb-12">
+          <div class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+            <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+            Genesis &amp; Evolution
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mb-6">
+            The IBFC Story: Transforming Indian Debt Resolution from Patna
+          </h2>
+          
+          <!-- Story Subsections / Chapters -->
+          <div class="space-y-6 text-slate-700 leading-relaxed text-base sm:text-lg">
+            <div class="border-l-4 border-accent-amber pl-4 py-1">
+              <h4 class="font-bold text-slate-900 text-xl mb-1">2014: The Founding Spark on Fraser Road, Patna</h4>
+              <p class="text-slate-600 text-base">
+                In the early 2010s, India’s retail banking revolution was accelerating at breakneck speed. Personal loans, credit cards, auto loans, and micro-enterprises were growing at 25%+ year-on-year. Yet, when borrowers encountered financial distress, banks had to rely on fragmented, decentralized local collection agents lacking institutional training, technology, or standardized compliance.
+              </p>
+            </div>
+
+            <p>
+              Recognizing this critical structural void, a core group of senior banking leaders who had spent over 35 years in the retail BFSI sector joined hands in **Patna, Bihar** in October 2014. Headquartered at the commercial heart of Patna near Fraser Road and Dak Bunglow Chowk, **IBFC (Integrated Banking &amp; Financial Corporation)** was born with a foundational team of 125 certified banking professionals.
+            </p>
+
+            <div class="border-l-4 border-primary pl-4 py-1">
+              <h4 class="font-bold text-slate-900 text-xl mb-1">The Core Conviction: "Dignified Recovery &amp; Financial Literacy"</h4>
+              <p class="text-slate-600 text-base">
+                Unlike traditional debt collection agencies, IBFC was conceptualized from day one as a **financial intermediary and customer education partner**. The founders believed that delinquent accounts are fundamentally solved through financial counseling, empathetic restructuring, and structured repayment pathways—never through intimidation or unorganized methods.
+              </p>
+            </div>
+
+            <p>
+              By combining strict adherence to the Reserve Bank of India’s (RBI) Fair Practices Code with enterprise cloud telephony and geo-tagged field tracking, IBFC quickly won the trust of top-tier commercial banks. By 2016, operations expanded across West Bengal, Odisha, Jharkhand, Uttar Pradesh, and Delhi NCR.
+            </p>
+
+            <p>
+              Today, from our central Corporate Headquarters in **Patna, Bihar**, IBFC directs a nationwide workforce of **over 5,000+ professionals across 25+ states and union territories**, partnering with 20+ marquee banks and NBFCs, resolving over 35+ lakh customer accounts, and recovering ₹750+ Cr each quarter.
+            </p>
+          </div>
+        </div>
+
+        <!-- Vision & Mission Grid -->
+        <div class="grid md:grid-cols-2 gap-8 pt-8 border-t border-slate-200">
+          
+          <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="w-14 h-14 rounded-xl bg-primary text-accent-amber flex items-center justify-center text-2xl mb-4">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-primary mb-3">Our Vision</h3>
+            <p class="text-slate-600 leading-relaxed text-sm">
+              To be India's most trusted and technologically advanced financial intermediary, pioneering nationwide consumer financial literacy to bring financial empowerment, wellness, and peace of mind to millions of borrowers.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="w-14 h-14 rounded-xl bg-accent-amber text-slate-950 flex items-center justify-center text-2xl mb-4">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-primary mb-3">Our Mission</h3>
+            <p class="text-slate-600 leading-relaxed text-sm">
+              To drive consumer financial literacy, reduce institutional credit risk, and achieve sustainable credit health for banking partners through operational excellence, strict ethical governance, and state-of-the-art contact center technology.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Historical Journey Timeline -->
+      <div class="mb-20">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h3 class="text-3xl font-extrabold text-primary mb-2">Our Decade of Milestones</h3>
+          <p class="text-slate-600 text-sm">A trajectory of disciplined growth, ethical governance, and technological maturity.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+            <div class="text-2xl font-black text-accent-amber mb-2">2014</div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">The Patna Inception</h4>
+            <p class="text-xs text-slate-600">Founded on Fraser Road, Patna with 125 professionals with a focus on organized banking debt resolution.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+            <div class="text-2xl font-black text-primary mb-2">2016</div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Regional Expansion</h4>
+            <p class="text-xs text-slate-600">Expanded footprint across 6 key states with high-density field collection networks across Eastern &amp; Northern India.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+            <div class="text-2xl font-black text-accent-amber mb-2">2019</div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Tech Automation</h4>
+            <p class="text-xs text-slate-600">Integrated enterprise predictive diallers, Salesforce CRM, and 14+ Indian regional languages calling capability.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+            <div class="text-2xl font-black text-primary mb-2">2022</div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">ISO Certifications</h4>
+            <p class="text-xs text-slate-600">Awarded ISO 9001:2015 Quality Management &amp; ISO/IEC 27001:2022 Information Security badges.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative">
+            <div class="text-2xl font-black text-emerald-600 mb-2">Present</div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Pan-India Leader</h4>
+            <p class="text-xs text-slate-600">5,000+ strong workforce recovering ₹750+ Cr quarterly across 25+ states for 20+ marquee banks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founders & Executive Leadership Section -->
+      <div id="founders" class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm mb-16">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+            <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+            Visionary Leadership
+            <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+          </div>
+          <h3 class="text-3xl sm:text-4xl font-extrabold text-primary mb-3">
+            Meet the Founders &amp; Executive Board
+          </h3>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Guided by senior banking luminaries, risk strategists, and regulatory authorities bringing over a century of collective BFSI pedigree.
+          </p>
+        </div>
+
+        <!-- Founders Cards Grid -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          
+          <!-- Founder 1: Alok Kumar Verma -->
+          <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 hover:shadow-lg transition flex flex-col justify-between">
+            <div>
+              <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 mb-6 text-center sm:text-left">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Alok Kumar Verma - Founder & MD" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover shadow-md border-2 border-white shrink-0">
+                <div>
+                  <div class="inline-block px-2.5 py-0.5 bg-amber-100 text-amber-800 text-[11px] font-bold rounded-full mb-1">
+                    Founder &amp; Managing Director
+                  </div>
+                  <h4 class="text-2xl font-black text-primary">Alok Kumar Verma</h4>
+                  <p class="text-xs font-semibold text-slate-500 mb-2">Ex-Chief General Manager (Retail Credit &amp; Risk), SBI</p>
+                  <div class="flex items-center justify-center sm:justify-start gap-2 text-xs text-slate-600">
+                    <span class="inline-flex items-center gap-1 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                      <i class="fa-solid fa-check"></i> 35+ Years in BFSI
+                    </span>
+                    <a href="#" class="text-primary hover:text-accent-blue" title="LinkedIn Profile"><i class="fa-brands fa-linkedin text-base"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                With more than three and a half decades in the Indian commercial banking landscape, Mr. Verma conceived and established IBFC in Patna in 2014. Having witnessed firsthand the inefficiencies of fragmented recovery channels during his tenure as a senior banking executive, he championed an institutional framework rooted in data science, ethical conduct, and Pan-India operational scalability.
+              </p>
+
+              <blockquote class="p-4 rounded-xl bg-white border-l-4 border-primary text-xs italic text-slate-700 mb-6">
+                "Our guiding principle has always been that ethical recovery and dignified customer dialogue are the strongest engines for institutional balance sheet longevity."
+              </blockquote>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-600">
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">Retail Credit Risk</span>
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">Institutional Governance</span>
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">Banking Strategy</span>
+            </div>
+          </div>
+
+          <!-- Founder 2: Priya R. Narayan -->
+          <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 hover:shadow-lg transition flex flex-col justify-between">
+            <div>
+              <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 mb-6 text-center sm:text-left">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Priya R. Narayan - Co-Founder & COO" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover shadow-md border-2 border-white shrink-0">
+                <div>
+                  <div class="inline-block px-2.5 py-0.5 bg-sky-100 text-sky-800 text-[11px] font-bold rounded-full mb-1">
+                    Co-Founder &amp; Chief Operating Officer
+                  </div>
+                  <h4 class="text-2xl font-black text-primary">Priya R. Narayan</h4>
+                  <p class="text-xs font-semibold text-slate-500 mb-2">Ex-Senior Vice President (Collections &amp; BPO Operations), HDFC Bank</p>
+                  <div class="flex items-center justify-center sm:justify-start gap-2 text-xs text-slate-600">
+                    <span class="inline-flex items-center gap-1 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                      <i class="fa-solid fa-check"></i> 26+ Years in Operations
+                    </span>
+                    <a href="#" class="text-primary hover:text-accent-blue" title="LinkedIn Profile"><i class="fa-brands fa-linkedin text-base"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Priya leads IBFC’s nationwide operational engine, managing 5,000+ professionals across 8 major hubs and field collection teams in 25+ states. An alumna of IIM Calcutta with deep expertise in large-scale contact center orchestration, she architected IBFC's proprietary Hybrid Recovery Model, uniting predictive telecommunication with verified doorstep engagement.
+              </p>
+
+              <blockquote class="p-4 rounded-xl bg-white border-l-4 border-accent-amber text-xs italic text-slate-700 mb-6">
+                "Scaling across 25 states requires disciplined quality calibration, continuous workforce upskilling, and deep empathy for both client metrics and borrower circumstance."
+              </blockquote>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-600">
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">Large BPO Orchestration</span>
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">Hybrid Field Logistics</span>
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">DRA Certified Trainer</span>
+            </div>
+          </div>
+
+          <!-- Founder 3: Amitav Sengupta -->
+          <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 hover:shadow-lg transition flex flex-col justify-between">
+            <div>
+              <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 mb-6 text-center sm:text-left">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Amitav Sengupta - Co-Founder & CTO" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover shadow-md border-2 border-white shrink-0">
+                <div>
+                  <div class="inline-block px-2.5 py-0.5 bg-indigo-100 text-indigo-800 text-[11px] font-bold rounded-full mb-1">
+                    Co-Founder &amp; Chief Technology Officer
+                  </div>
+                  <h4 class="text-2xl font-black text-primary">Amitav Sengupta</h4>
+                  <p class="text-xs font-semibold text-slate-500 mb-2">Ex-VP Telecom Systems &amp; Cloud Telephony Architect</p>
+                  <div class="flex items-center justify-center sm:justify-start gap-2 text-xs text-slate-600">
+                    <span class="inline-flex items-center gap-1 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                      <i class="fa-solid fa-check"></i> 22+ Years in FinTech
+                    </span>
+                    <a href="#" class="text-primary hover:text-accent-blue" title="LinkedIn Profile"><i class="fa-brands fa-linkedin text-base"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                A pioneer in high-concurrency telephony systems, Amitav has engineered IBFC's technology infrastructure from the ground up. He is the mastermind behind the integration of predictive auto-diallers (Vicidial/Ameyo), real-time Salesforce CRM pipelines, speech quality analytics, and bank-grade ISO/IEC 27001 data residency protocols.
+              </p>
+
+              <blockquote class="p-4 rounded-xl bg-white border-l-4 border-indigo-600 text-xs italic text-slate-700 mb-6">
+                "We engineered our infrastructure to deliver 100% auditability and bank-level data encryption, transforming calling data into actionable portfolio intelligence."
+              </blockquote>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-600">
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">Predictive Diallers</span>
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">ISO 27001 Lead Auditor</span>
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">AI Speech Analytics</span>
+            </div>
+          </div>
+
+          <!-- Founder 4: Adv. Sanjay K. Jha -->
+          <div class="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 hover:shadow-lg transition flex flex-col justify-between">
+            <div>
+              <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5 mb-6 text-center sm:text-left">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Adv. Sanjay K. Jha - Co-Founder & Head of Legal" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover shadow-md border-2 border-white shrink-0">
+                <div>
+                  <div class="inline-block px-2.5 py-0.5 bg-emerald-100 text-emerald-800 text-[11px] font-bold rounded-full mb-1">
+                    Co-Founder &amp; Head of Compliance &amp; Legal
+                  </div>
+                  <h4 class="text-2xl font-black text-primary">Adv. Sanjay K. Jha</h4>
+                  <p class="text-xs font-semibold text-slate-500 mb-2">Senior Banking Counsel &amp; High Court Advocate</p>
+                  <div class="flex items-center justify-center sm:justify-start gap-2 text-xs text-slate-600">
+                    <span class="inline-flex items-center gap-1 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                      <i class="fa-solid fa-check"></i> 28+ Years in Law
+                    </span>
+                    <a href="#" class="text-primary hover:text-accent-blue" title="LinkedIn Profile"><i class="fa-brands fa-linkedin text-base"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Advocate Jha brings 28+ years of dedicated practice in banking jurisprudence, DRT procedures, SARFAESI enforcement, and financial arbitration. At IBFC, he heads the Corporate Governance &amp; Regulatory Audit desk, ensuring that every telecaller and field executive undergoes strict DRA certification and complies 100% with the RBI Fair Practices Code.
+              </p>
+
+              <blockquote class="p-4 rounded-xl bg-white border-l-4 border-emerald-600 text-xs italic text-slate-700 mb-6">
+                "Compliance is our non-negotiable benchmark. Zero harassment, absolute respect for borrower privacy, and total adherence to law safeguard our institutional reputation."
+              </blockquote>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-600">
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">RBI Regulatory Law</span>
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">SARFAESI &amp; DRT</span>
+              <span class="px-2.5 py-1 bg-white rounded border border-slate-200">Ethics &amp; Fair Practice</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Note from Founder & MD's Desk -->
+        <div class="bg-gradient-to-r from-primary-dark via-primary to-primary-light text-white rounded-2xl p-8 sm:p-10 shadow-lg relative overflow-hidden">
+          <div class="relative z-10 max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-amber/20 text-accent-amber text-xs font-bold uppercase tracking-wider mb-4 border border-accent-amber/30">
+              <i class="fa-solid fa-feather-pointed"></i> Message from the Founder's Desk
+            </div>
+            <h4 class="text-2xl sm:text-3xl font-extrabold mb-4">
+              "Patna to Pan-India: A Decade Built on Trust, Empathy &amp; Results"
+            </h4>
+            <p class="text-slate-200 text-sm sm:text-base leading-relaxed mb-4">
+              "When we started IBFC in 2014 in Patna with just 125 executives, critics wondered if organized debt servicing could scale ethically while maintaining aggressive recovery metrics. A decade later, having recovered over ₹750+ Cr quarterly across 25+ states for India's finest banking institutions, our belief has been validated."
+            </p>
+            <p class="text-slate-200 text-sm leading-relaxed mb-6">
+              "To our partner banks, our 5,000+ dedicated employees, and the millions of borrowers we assist: our commitment to transparency, technology, and mutual respect remains unwavering."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-accent-amber text-slate-900 flex items-center justify-center font-black text-xl">
+                AV
+              </div>
+              <div>
+                <strong class="block text-white font-bold text-base">Alok Kumar Verma</strong>
+                <span class="text-xs text-slate-300">Founder &amp; Managing Director | IBFC Consultants Ltd.</span>
+              </div>
+            </div>
+          </div>
+          <i class="fa-solid fa-quote-right absolute -bottom-6 -right-6 text-white/5 text-9xl pointer-events-none"></i>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tab 2: Life at IBFC Panel -->
+  <div id="tab-life" class="about-tab-panel py-16 hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm mb-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div>
+            <div class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+              <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+              People &amp; Culture
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mb-6">
+              Empowering 5,000+ Careers with Dignity, Skill &amp; Inclusion
+            </h2>
+            <p class="text-slate-600 leading-relaxed text-base mb-4">
+              At IBFC, our people are our biggest competitive advantage. We believe that professional debt collection requires exceptional empathy, high emotional intelligence, and rigorous customer-handling protocols.
+            </p>
+            <p class="text-slate-600 leading-relaxed text-base">
+              We maintain progressive HR policies, continuous skill enhancement, meritocratic rewards, and a high-retention environment where every employee from front-line telecaller to senior cluster manager thrives.
+            </p>
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Life at IBFC Team" class="w-full h-[360px] object-cover">
+          </div>
+        </div>
+
+        <!-- Culture Highlights -->
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <i class="fa-solid fa-graduation-cap text-3xl text-primary mb-4"></i>
+            <h4 class="font-bold text-slate-900 text-lg mb-2">IBFC Academy</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mandatory 4-week structured induction in Indian banking norms, customer psychology, DRA certification, and de-escalation methods.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <i class="fa-solid fa-hands-holding-child text-3xl text-accent-amber mb-4"></i>
+            <h4 class="font-bold text-slate-900 text-lg mb-2">Diversity &amp; Inclusion</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Proud to maintain over 42% female representation across our corporate contact centers and managerial supervisory ranks.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <i class="fa-solid fa-heart-pulse text-3xl text-rose-600 mb-4"></i>
+            <h4 class="font-bold text-slate-900 text-lg mb-2">Employee Welfare</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Comprehensive medical insurance, performance incentive schemes, mental health workshops, and ergonomic workspace designs.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tab 3: Technology & Security Panel -->
+  <div id="tab-tech" class="about-tab-panel py-16 hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm mb-16">
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+            <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+            FinTech Infrastructure
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mb-4">
+            Institutional-Grade Technology Stack &amp; ISO 27001 Security
+          </h2>
+          <p class="text-slate-600 text-base leading-relaxed">
+            Our technological architecture is built to satisfy the stringent compliance, data residency, and real-time reporting standards of India’s largest private and scheduled commercial banks.
+          </p>
+        </div>
+
+        <!-- Tech Matrix -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          
+          <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+            <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Predictive Telephony Stack</h4>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Automated high-concurrency diallers (Ameyo &amp; Vicidial) with drop-call minimization, dynamic skill-based routing, and 100% call recording with dual-channel audio.
+            </p>
+            <span class="inline-block px-2.5 py-1 bg-white rounded border border-slate-200 text-[10px] font-bold text-primary">PRI, SIP &amp; GSM Trunks</span>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+            <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Salesforce CRM Integration</h4>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Live bi-directional API synchronizations with banking host systems. Secure disposition logs, dispute ticket tracking, and immediate payment confirmation gateways.
+            </p>
+            <span class="inline-block px-2.5 py-1 bg-white rounded border border-slate-200 text-[10px] font-bold text-indigo-600">Enterprise CRM</span>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+            <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">ISO/IEC 27001 Data Security</h4>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Role-based data masking, strict USB/media disabling on endpoints, end-to-end AES-256 data encryption at rest and in transit, and continuous SOC vulnerability auditing.
+            </p>
+            <span class="inline-block px-2.5 py-1 bg-white rounded border border-slate-200 text-[10px] font-bold text-emerald-600">Zero Trust Framework</span>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+            <div class="w-12 h-12 rounded-xl bg-accent-amber text-slate-900 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-check-to-slot"></i>
+            </div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Licensed Truecaller Verification</h4>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Official institutional verified green badge IDs to reassure customers of caller authenticity, drastically elevating call pick-up rates and customer trust.
+            </p>
+            <span class="inline-block px-2.5 py-1 bg-white rounded border border-slate-200 text-[10px] font-bold text-amber-700">Verified Calling ID</span>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+            <div class="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-location-crosshairs"></i>
+            </div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Field Agent Geo-Tracking</h4>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Proprietary mobile application for field executives featuring GPS geo-stamping, digital receipt generation, and real-time address validation.
+            </p>
+            <span class="inline-block px-2.5 py-1 bg-white rounded border border-slate-200 text-[10px] font-bold text-sky-700">Mobile Field App</span>
+          </div>
+
+          <div class="p-6 rounded-2xl border border-slate-200 bg-slate-50">
+            <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <h4 class="font-bold text-slate-900 text-base mb-2">Speech &amp; Quality Analytics</h4>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3">
+              Automated audit screening for compliance keywords, tone verification, mandatory script disclosure checks, and sentiment scoring across interactions.
+            </p>
+            <span class="inline-block px-2.5 py-1 bg-white rounded border border-slate-200 text-[10px] font-bold text-purple-700">AI Quality Monitoring</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent-blue flex items-center justify-center text-white font-extrabold text-xl shadow">
+              IB
+            </div>
+            <span class="text-2xl font-black text-white tracking-tight">IBFC<span class="text-accent-amber">.</span></span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
+            Integrated Banking &amp; Financial Corporation (IBFC) is India's leading financial intermediary and debt recovery partner, empowering financial institutions through technology, ethics, and pan-India reach.
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="px-3 py-1.5 rounded-md bg-slate-800 text-xs font-semibold text-emerald-400 border border-slate-700">
+              <i class="fa-solid fa-shield-check mr-1.5"></i> ISO 9001:2015
+            </div>
+            <div class="px-3 py-1.5 rounded-md bg-slate-800 text-xs font-semibold text-sky-400 border border-slate-700">
+              <i class="fa-solid fa-lock mr-1.5"></i> ISO/IEC 27001:2022
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Company</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About IBFC</a></li>
+            <li><a href="about.html#story" class="hover:text-white transition">Our Story</a></li>
+            <li><a href="about.html#founders" class="hover:text-white transition">Founders &amp; Leadership</a></li>
+            <li><a href="partner.html" class="hover:text-white transition text-accent-amber font-semibold">Partner With Us</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Key Services</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="services.html#debt-collection" class="hover:text-white transition">Delinquent Debt Collection</a></li>
+            <li><a href="services.html#debt-initiation" class="hover:text-white transition">Debt Initiation &amp; Sourcing</a></li>
+            <li><a href="services.html#client-servicing" class="hover:text-white transition">Inbound Client Servicing</a></li>
+            <li><a href="services.html#telecommunicator" class="hover:text-white transition">Predictive BPO Centers</a></li>
+            <li><a href="services.html#field-recovery" class="hover:text-white transition">Geo-Tagged Field Visits</a></li>
+            <li><a href="services.html#third-party" class="hover:text-white transition">Third Party Verification</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Corporate Contact -->
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Head Office</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            <strong class="text-slate-200">Corporate HQ (Patna):</strong><br>
+            IBFC Corporate Tower, Plot No. 12, Fraser Road,<br>
+            Near Dak Bunglow Chowk, Patna, Bihar - 800001.<br>
+            <span class="text-slate-400 mt-2 block">Regional Hubs: Patna | Kolkata | Delhi NCR | Mumbai | Bengaluru</span>
+          </p>
+          <div class="text-xs space-y-1.5 text-slate-300">
+            <div><i class="fa-solid fa-phone text-accent-amber mr-2"></i> +91 612 250 8800 / +91 11 4512 8800</div>
+            <div><i class="fa-solid fa-envelope text-accent-amber mr-2"></i> info@ibfcconsult.com</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Socials -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>
+          &copy; <span class="current-year"></span> IBFC Consultants Limited. All rights reserved.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300 transition">Terms of Service</a>
+          <a href="#" class="hover:text-slate-300 transition">Fair Practices Code</a>
+          <a href="#" class="hover:text-slate-300 transition">CSR Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

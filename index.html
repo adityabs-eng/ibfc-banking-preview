@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBFC - Integrated Banking & Financial Corporation | Premier Financial Intermediary</title>
+  <meta name="description" content="IBFC is a premier financial intermediary providing robust risk management, retail loan sourcing, debt recovery solutions, and financial literacy across India.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#0a3b5c',
+              light: '#0e5483',
+              dark: '#06283f',
+            },
+            accent: {
+              amber: '#f59e0b',
+              blue: '#0284c7',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1B2PpLwq3x5p1Nn9KhrlN7p1GFhFdomcFZC2x5VgrxGk3i1Pj4lC2Nf3PzLMZw5q5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-primary selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-primary-dark text-slate-300 text-xs py-2 px-4 border-b border-primary-light/30">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-phone text-accent-amber"></i>
+          <a href="tel:+916122508800" class="hover:text-white transition">+91 612 250 8800</a>
+        </span>
+        <span class="hidden md:flex items-center gap-2">
+          <i class="fa-solid fa-envelope text-accent-amber"></i>
+          <a href="mailto:info@ibfcconsult.com" class="hover:text-white transition">info@ibfcconsult.com</a>
+        </span>
+        <span class="hidden lg:flex items-center gap-2 text-slate-400">
+          <i class="fa-solid fa-certificate text-emerald-400"></i>
+          ISO 9001:2015 &amp; ISO/IEC 27001:2022 Certified
+        </span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <span class="hidden sm:inline text-slate-300">
+          <i class="fa-solid fa-location-dot text-rose-400 mr-1"></i> Headquartered in Patna, Bihar | 25+ States
+        </span>
+        <div class="flex items-center gap-3 border-l border-slate-700 pl-3">
+          <a href="#" class="hover:text-white transition" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-white transition" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="hover:text-white transition" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header id="main-header" class="sticky top-0 z-50 glass-header py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-primary-dark via-primary to-accent-blue flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
+            <span class="font-extrabold text-2xl tracking-tighter">IB</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-black text-primary tracking-tight group-hover:text-primary-light transition-colors">
+              IBFC<span class="text-accent-amber">.</span>
+            </span>
+            <span class="text-[10px] uppercase tracking-widest font-bold text-slate-500">
+              Integrated Banking &amp; Financial Corp
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-7">
+          <a href="index.html" class="nav-link active text-sm font-semibold hover:text-primary transition py-1">Home</a>
+          <a href="about.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">About Us</a>
+          <a href="services.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Services</a>
+          <a href="partner.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Partner With Us</a>
+          <a href="contact.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Contact Us</a>
+        </nav>
+
+        <!-- Header CTA Button -->
+        <div class="hidden md:flex items-center gap-4">
+          <a href="partner.html#rfp-form" class="bg-primary hover:bg-primary-light text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+            <span>Request Proposal</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
+            <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-6 bg-white border-t border-slate-200 shadow-xl transition-all">
+      <div class="flex flex-col space-y-3">
+        <a href="index.html" class="px-3 py-2 rounded-md text-base font-semibold text-primary bg-slate-50">Home</a>
+        <a href="about.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">About Us</a>
+        <a href="services.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Services</a>
+        <a href="partner.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Partner With Us</a>
+        <a href="contact.html" class="px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-primary">Contact Us</a>
+        <div class="pt-2">
+          <a href="partner.html#rfp-form" class="w-full text-center block bg-primary text-white py-2.5 rounded-lg font-semibold shadow">Request Proposal</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Carousel Section -->
+  <section id="hero-slider-container" class="relative h-[82vh] min-h-[550px] w-full overflow-hidden bg-slate-900">
+    
+    <!-- Slide 1 -->
+    <div class="hero-slide absolute inset-0 opacity-100 pointer-events-auto">
+      <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1920&q=80" alt="IBFC One Stop Solutions" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/80 to-transparent"></div>
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-amber/20 text-accent-amber text-xs font-bold uppercase tracking-wider mb-4 border border-accent-amber/30">
+              <i class="fa-solid fa-shield-halved"></i> Institutional Excellence
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight drop-shadow-md mb-4">
+              One Stop Solution for BFSI Operations
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-200 mb-8 leading-relaxed font-normal">
+              Hybrid mode of operation seamlessly combining high-velocity automated telecalling with robust pan-India on-ground field execution.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="services.html" class="bg-accent-amber hover:bg-amber-500 text-slate-900 px-7 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+                Explore Services
+              </a>
+              <a href="about.html" class="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 px-7 py-3.5 rounded-xl font-semibold transition-all">
+                Learn About IBFC
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="hero-slide absolute inset-0 opacity-0 pointer-events-none">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80" alt="Trusted Financial Intermediary" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/80 to-transparent"></div>
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-blue/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-4 border border-sky-400/30">
+              <i class="fa-solid fa-chart-line"></i> Pan-India Reach
+            </div>
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight drop-shadow-md mb-4">
+              Your Trusted Financial Intermediary
+            </h2>
+            <p class="text-lg sm:text-xl text-slate-200 mb-8 leading-relaxed font-normal">
+              Empowering banks and NBFCs with disciplined debt recovery, risk mitigation, and scalable retail loan portfolio sourcing.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="contact.html" class="bg-primary-light hover:bg-primary text-white border border-white/20 px-7 py-3.5 rounded-xl font-bold shadow-lg transition-all transform hover:-translate-y-0.5">
+                Contact Our Advisors
+              </a>
+              <a href="services.html" class="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 px-7 py-3.5 rounded-xl font-semibold transition-all">
+                View Solutions
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide absolute inset-0 opacity-0 pointer-events-none">
+      <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1920&q=80" alt="Pioneering Financial Literacy" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/80 to-transparent"></div>
+      <div class="absolute inset-0 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white w-full">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-400/30">
+              <i class="fa-solid fa-graduation-cap"></i> Literacy &amp; Empowerment
+            </div>
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight drop-shadow-md mb-4">
+              Pioneering Ethical Literacy &amp; Governance
+            </h2>
+            <p class="text-lg sm:text-xl text-slate-200 mb-8 leading-relaxed font-normal">
+              Educating consumers, upholding fair-practice codes, and restoring financial health with empathy, rigor, and cutting-edge tech.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+              <a href="about.html" class="bg-accent-amber hover:bg-amber-500 text-slate-900 px-7 py-3.5 rounded-xl font-bold shadow-lg transition-all transform hover:-translate-y-0.5">
+                Discover Our Story
+              </a>
+              <a href="contact.html" class="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/30 px-7 py-3.5 rounded-xl font-semibold transition-all">
+                Get In Touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Nav Arrows -->
+    <button id="slider-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/30 hover:bg-black/60 text-white flex items-center justify-center backdrop-blur-sm transition border border-white/20 focus:outline-none" aria-label="Previous Slide">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="slider-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/30 hover:bg-black/60 text-white flex items-center justify-center backdrop-blur-sm transition border border-white/20 focus:outline-none" aria-label="Next Slide">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Slider Dots -->
+    <div class="absolute bottom-28 left-1/2 -translate-x-1/2 flex items-center gap-3 z-20">
+      <button class="slider-dot w-8 h-3 rounded-full bg-white transition-all duration-300" aria-label="Slide 1"></button>
+      <button class="slider-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300" aria-label="Slide 2"></button>
+      <button class="slider-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Floating Stats Strip across bottom of Hero -->
+    <div class="absolute bottom-0 left-0 right-0 bg-primary-dark/85 backdrop-blur-md border-t border-white/10 py-5 z-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
+          <div class="border-r border-white/10 last:border-0 pr-2">
+            <div class="text-2xl sm:text-3xl font-extrabold text-accent-amber counter-value" data-target="5000" data-suffix="+">5,000+</div>
+            <div class="text-xs sm:text-sm text-slate-300 font-medium mt-0.5">Telecallers &amp; Field Staff</div>
+          </div>
+          <div class="border-r border-white/10 last:border-0 pr-2">
+            <div class="text-2xl sm:text-3xl font-extrabold text-white counter-value" data-target="25" data-suffix="+">25+</div>
+            <div class="text-xs sm:text-sm text-slate-300 font-medium mt-0.5">Operating Indian States</div>
+          </div>
+          <div class="border-r border-white/10 last:border-0 pr-2">
+            <div class="text-2xl sm:text-3xl font-extrabold text-accent-amber counter-value" data-target="20" data-suffix="+">20+</div>
+            <div class="text-xs sm:text-sm text-slate-300 font-medium mt-0.5">Top Banking &amp; NBFC Partners</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-extrabold text-white">ISO</div>
+            <div class="text-xs sm:text-sm text-slate-300 font-medium mt-0.5">9001:2015 &amp; 27001:2022</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Who We Are -->
+  <section class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        
+        <!-- Visual Column -->
+        <div class="relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-100">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=80" alt="IBFC Operations & Technology Hub" class="w-full h-[460px] object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 p-6 rounded-xl bg-white/95 backdrop-blur-md shadow-lg border border-white">
+              <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-xl bg-primary text-accent-amber flex items-center justify-center text-2xl font-black">
+                  10+
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-lg">Decade of BFSI Leadership</h4>
+                  <p class="text-xs text-slate-600">Built on deep retail banking pedigree, robust technology, and compliance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative element -->
+          <div class="absolute -top-6 -left-6 w-24 h-24 bg-accent-amber/20 rounded-full blur-2xl -z-10"></div>
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl -z-10"></div>
+        </div>
+
+        <!-- Content Column -->
+        <div>
+          <div class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-3">
+            <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+            Who We Are
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mb-6 leading-tight">
+            A New-Age Financial Institution Powering Risk Management &amp; Growth
+          </h2>
+          <p class="text-slate-600 text-lg leading-relaxed mb-6">
+            IBFC (Integrated Banking &amp; Financial Corporation) is an industry-recognized financial services and credit management organization. With over a decade of domain expertise, we provide specialized risk management, accelerated debt collections, loan book expansion, and nationwide consumer financial literacy.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-8">
+            The firm currently harnesses over <strong class="text-slate-900">5,000+ experienced professionals</strong>, catering to India’s marquee commercial banks and NBFCs. Through proprietary predictive auto-diallers, quality calibration frameworks, and Salesforce CRM integration, we transform credit recoveries into transparent, brand-accretive engagements.
+          </p>
+
+          <!-- Highlights List -->
+          <div class="grid sm:grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-emerald-600 text-lg mt-0.5"></i>
+              <div>
+                <h5 class="font-semibold text-slate-900 text-sm">Regulatory Compliance</h5>
+                <p class="text-xs text-slate-500">Strict adherence to RBI fair recovery practices.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-emerald-600 text-lg mt-0.5"></i>
+              <div>
+                <h5 class="font-semibold text-slate-900 text-sm">Predictive Calling Tech</h5>
+                <p class="text-xs text-slate-500">Automated diallers with 100% voice recording.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-emerald-600 text-lg mt-0.5"></i>
+              <div>
+                <h5 class="font-semibold text-slate-900 text-sm">Hybrid Operations</h5>
+                <p class="text-xs text-slate-500">Sync between tele-calling and verified field visits.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fa-solid fa-circle-check text-emerald-600 text-lg mt-0.5"></i>
+              <div>
+                <h5 class="font-semibold text-slate-900 text-sm">Multi-Lingual Reach</h5>
+                <p class="text-xs text-slate-500">Fluency in 14+ languages across all states.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="about.html" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white px-6 py-3 rounded-xl font-semibold shadow hover:shadow-md transition">
+              <span>Our Story &amp; Vision</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <a href="about.html#founders" class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 px-6 py-3 rounded-xl font-semibold border border-slate-300 transition">
+              <i class="fa-solid fa-users text-primary"></i>
+              <span>Meet Our Founders</span>
+            </a>
+            <a href="services.html" class="inline-flex items-center gap-2 text-primary hover:text-primary-light font-bold text-sm px-3 py-3">
+              <span>View Capabilities</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Why Choose IBFC -->
+  <section class="py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+          <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+          Competitive Edge
+          <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mb-4">
+          Why Leading Institutions Choose IBFC
+        </h2>
+        <p class="text-slate-600 text-base">
+          Our integrated approach pairs battle-tested operational discipline with modern cloud analytics, guaranteeing benchmark recovery rates and customer satisfaction.
+        </p>
+      </div>
+
+      <!-- 6-Card Grid matching VGM reference with modern refinements -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-sky-50 text-primary flex items-center justify-center text-3xl mb-6">
+              <i class="fa-solid fa-award text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Unmatched Quality Focus</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              IBFC delivers uncompromising excellence in compliance and risk mitigation. Built-in quality auditors and AI-assisted speech analytics ensure high-fidelity interactions at every turn.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-primary">
+            <span>ISO 9001:2015 Benchmark</span>
+            <i class="fa-solid fa-check-double text-emerald-500"></i>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-amber-50 text-accent-amber flex items-center justify-center text-3xl mb-6">
+              <i class="fa-solid fa-map-location-dot text-amber-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Pan-India Presence</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Headquartered in Patna with decentralized operations across 8 strategic hubs including Delhi NCR, Kolkata, Mumbai, Bengaluru, Chennai, and Hyderabad, providing deep localized reach.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-primary">
+            <span>Covering 25+ Indian States</span>
+            <i class="fa-solid fa-location-arrow text-amber-500"></i>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-3xl mb-6">
+              <i class="fa-solid fa-robot text-indigo-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Tech-Driven Processes</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Enterprise Salesforce CRM integration, Vicidial/Ameyo predictive auto-diallers, PRI/SIP trunks, licensed Truecaller verified badges, and real-time client analytics dashboards.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-primary">
+            <span>API &amp; Real-Time Integration</span>
+            <i class="fa-solid fa-bolt text-indigo-500"></i>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-3xl mb-6">
+              <i class="fa-solid fa-language text-teal-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Multi-Lingual Workforce</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Over 5,000 telecommunicators and field executives fluent across 14+ Indian regional languages, facilitating empathetic communication, cultural affinity, and frictionless resolution.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-primary">
+            <span>14+ Languages Native Support</span>
+            <i class="fa-solid fa-comments text-teal-500"></i>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-3xl mb-6">
+              <i class="fa-solid fa-people-arrows text-emerald-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">Hybrid Collection Model</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Synergistic execution pairing data-backed telecalling with geo-tagged on-ground field tracing and doorstep documentation for hard-to-reach delinquent accounts.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-primary">
+            <span>Seamless Tele + Field Cohesion</span>
+            <i class="fa-solid fa-arrows-split-up-and-left text-emerald-500"></i>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-3xl mb-6">
+              <i class="fa-solid fa-graduation-cap text-rose-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3">IBFC Excellence Academy</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Continuous specialized training in DRA (Debt Recovery Agent) certification, BFSI regulations, conflict de-escalation, emotional intelligence, and data confidentiality standards.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-primary">
+            <span>Certified &amp; DRA Trained Staff</span>
+            <i class="fa-solid fa-user-check text-rose-500"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Impact Counter Banner (Parallax/Dark Theme) -->
+  <section class="relative py-20 bg-primary-dark text-white overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80" alt="IBFC Scale" class="absolute inset-0 w-full h-full object-cover opacity-15">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary/90 to-primary-dark"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+        
+        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+          <div class="text-4xl lg:text-5xl font-black text-accent-amber mb-2 counter-value" data-prefix="₹ " data-target="750" data-suffix="+ Cr">₹ 750+ Cr</div>
+          <h4 class="text-lg font-bold text-white mb-1">Recovered Per Quarter</h4>
+          <p class="text-xs text-slate-300">Substantial cash inflow acceleration for banking balance sheets.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+          <div class="text-4xl lg:text-5xl font-black text-white mb-2 counter-value" data-target="35" data-suffix="+ Lakh">35+ Lakh</div>
+          <h4 class="text-lg font-bold text-white mb-1">Accounts Resolved</h4>
+          <p class="text-xs text-slate-300">Successfully settled customer retail portfolios nationwide.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+          <div class="text-4xl lg:text-5xl font-black text-sky-400 mb-2 counter-value" data-target="99" data-suffix=".4%">99.4%</div>
+          <h4 class="text-lg font-bold text-white mb-1">Compliance Score</h4>
+          <p class="text-xs text-slate-300">Zero tolerance for unethical or unauthorized debt practices.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
+          <div class="text-4xl lg:text-5xl font-black text-emerald-400 mb-2 counter-value" data-target="8" data-suffix=" Hubs">8 Hubs</div>
+          <h4 class="text-lg font-bold text-white mb-1">State-of-the-Art Centers</h4>
+          <p class="text-xs text-slate-300">Fully equipped BPO infrastructures with high-redundancy IT.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Major Clients & Banking Partners -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+          <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+          Institutional Trust
+          <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary mb-3">
+          Trusted by India's Premier Financial Leaders
+        </h2>
+        <p class="text-slate-600 text-sm">
+          Partnering with tier-1 private &amp; public sector banks, NBFCs, and fintech pioneers across auto, personal, credit card, and MSME loan portfolios.
+        </p>
+      </div>
+
+      <!-- Partner Badges Showcase -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+        
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-building-columns text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">HDFC Bank</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-landmark text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">ICICI Bank</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-vault text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">State Bank of India</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-hand-holding-dollar text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">Kotak Mahindra</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-scale-balanced text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">Axis Bank</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-money-bill-transfer text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">Bank of Baroda</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-credit-card text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">Bajaj Finance</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-briefcase text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">Tata Capital</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-coins text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">Aditya Birla Finance</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-car-side text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">Toyota Financial</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-shield-cat text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">IDFC FIRST Bank</span>
+        </div>
+
+        <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl flex flex-col items-center justify-center hover:shadow-md transition group text-center">
+          <i class="fa-solid fa-piggy-bank text-3xl text-slate-600 group-hover:text-primary transition mb-2"></i>
+          <span class="font-bold text-xs text-slate-800">Poonawalla Fincorp</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 5: Core Services Preview -->
+  <section class="py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+            <span class="w-8 h-0.5 bg-primary rounded-full"></span>
+            Comprehensive Offerings
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary">
+            Specialized Financial Operations &amp; Servicing
+          </h2>
+        </div>
+        <a href="services.html" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+          <span>Explore All Services</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Service Preview Card 1 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm card-hover flex flex-col">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=700&q=80" alt="Debt Collection" class="w-full h-full object-cover">
+            <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+              Core Specialty
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-primary mb-2">Delinquent Debt Collection</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Accelerating cash inflow through empathetic, compliant, and data-backed recovery across early bucket (1-30 DPD) to write-off recovery stages.
+              </p>
+              <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Auto-Diallers &amp; Call Recording</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Geo-tagged Field Verification</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> 100% DRA Certified Telecommunicators</li>
+              </ul>
+            </div>
+            <a href="services.html#debt-collection" class="text-primary font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
+              <span>Read Details</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Preview Card 2 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm card-hover flex flex-col">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80" alt="Debt Initiation & Loan Sourcing" class="w-full h-full object-cover">
+            <div class="absolute top-4 left-4 bg-accent-amber text-slate-900 text-xs font-bold px-3 py-1 rounded-full">
+              Growth Engine
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-primary mb-2">Debt Initiation &amp; Loan Sourcing</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                Cross-selling, upselling, and targeted retail loan origination for personal, business, gold, and vehicle credit portfolios.
+              </p>
+              <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> High-Intent Lead Generation</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Multi-Lingual Product Pitching</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Pre-Screening &amp; Document Pickup</li>
+              </ul>
+            </div>
+            <a href="services.html#debt-initiation" class="text-primary font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
+              <span>Read Details</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Preview Card 3 -->
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm card-hover flex flex-col">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="Client Servicing & Inbound" class="w-full h-full object-cover">
+            <div class="absolute top-4 left-4 bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+              Customer Lifecycle
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-primary mb-2">Customer Lifecycle &amp; Inbound</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                End-to-end customer care, helpline management, third-party verification (TPV), and loan servicing operations for financial institutions.
+              </p>
+              <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> 24/7 Dedicated Inbound Helplines</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Third-Party Address &amp; Doc Verification</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Strict SLA Governance &amp; NPS Tracking</li>
+              </ul>
+            </div>
+            <a href="services.html#client-servicing" class="text-primary font-bold text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
+              <span>Read Details</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 6: Action Banner -->
+  <section class="py-16 bg-gradient-primary text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+      <div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">Ready to Accelerate Your Loan Servicing &amp; Recoveries?</h3>
+        <p class="text-slate-300 text-base max-w-2xl">
+          Consult with our senior BFSI risk strategists to see how IBFC's hybrid telephonic and field network can drive measurable recovery improvements.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="contact.html" class="bg-accent-amber hover:bg-amber-500 text-slate-900 px-8 py-3.5 rounded-xl font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+          Schedule Consultation
+        </a>
+        <a href="tel:+911145128800" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3.5 rounded-xl font-semibold text-base transition">
+          <i class="fa-solid fa-phone mr-2"></i> +91 11 4512 8800
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-accent-blue flex items-center justify-center text-white font-extrabold text-xl shadow">
+              IB
+            </div>
+            <span class="text-2xl font-black text-white tracking-tight">IBFC<span class="text-accent-amber">.</span></span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
+            Integrated Banking &amp; Financial Corporation (IBFC) is India's leading financial intermediary and debt recovery partner, empowering financial institutions through technology, ethics, and pan-India reach.
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="px-3 py-1.5 rounded-md bg-slate-800 text-xs font-semibold text-emerald-400 border border-slate-700">
+              <i class="fa-solid fa-shield-check mr-1.5"></i> ISO 9001:2015
+            </div>
+            <div class="px-3 py-1.5 rounded-md bg-slate-800 text-xs font-semibold text-sky-400 border border-slate-700">
+              <i class="fa-solid fa-lock mr-1.5"></i> ISO/IEC 27001:2022
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Company</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About IBFC</a></li>
+            <li><a href="about.html#story" class="hover:text-white transition">Our Story</a></li>
+            <li><a href="about.html#founders" class="hover:text-white transition">Founders &amp; Leadership</a></li>
+            <li><a href="partner.html" class="hover:text-white transition text-accent-amber font-semibold">Partner With Us</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Key Services</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="services.html#debt-collection" class="hover:text-white transition">Delinquent Debt Collection</a></li>
+            <li><a href="services.html#debt-initiation" class="hover:text-white transition">Debt Initiation &amp; Sourcing</a></li>
+            <li><a href="services.html#client-servicing" class="hover:text-white transition">Inbound Client Servicing</a></li>
+            <li><a href="services.html#telecommunicator" class="hover:text-white transition">Predictive BPO Centers</a></li>
+            <li><a href="services.html#field-recovery" class="hover:text-white transition">Geo-Tagged Field Visits</a></li>
+            <li><a href="services.html#third-party" class="hover:text-white transition">Third Party Verification</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Corporate Contact -->
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Head Office</h4>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            <strong class="text-slate-200">Corporate HQ (Patna):</strong><br>
+            IBFC Corporate Tower, Plot No. 12, Fraser Road,<br>
+            Near Dak Bunglow Chowk, Patna, Bihar - 800001.<br>
+            <span class="text-slate-400 mt-2 block">Regional Hubs: Patna | Kolkata | Delhi NCR | Mumbai | Bengaluru</span>
+          </p>
+          <div class="text-xs space-y-1.5 text-slate-300">
+            <div><i class="fa-solid fa-phone text-accent-amber mr-2"></i> +91 612 250 8800 / +91 11 4512 8800</div>
+            <div><i class="fa-solid fa-envelope text-accent-amber mr-2"></i> info@ibfcconsult.com</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Socials -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>
+          &copy; <span class="current-year"></span> IBFC Consultants Limited. All rights reserved.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-300 transition">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300 transition">Terms of Service</a>
+          <a href="#" class="hover:text-slate-300 transition">Fair Practices Code</a>
+          <a href="#" class="hover:text-slate-300 transition">CSR Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Success Modal -->
+  <div id="success-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center relative border border-slate-100 animate-fade-in">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 text-3xl">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3 class="text-2xl font-bold text-slate-900 mb-2">Inquiry Submitted!</h3>
+      <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+        Thank you for contacting <strong class="text-primary">IBFC Consultants</strong>. Our institutional relationship executive will review your requirements and connect with you shortly.
+      </p>
+      <button class="close-modal-btn w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 px-6 rounded-xl transition shadow">
+        Close &amp; Continue
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
