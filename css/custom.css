@@ -202,13 +202,11 @@ section, [id] {
 }
 
 /* Off-canvas sidebar transition */
-#mobile-sidebar,
-#left-section-sidebar {
+#mobile-sidebar {
   will-change: transform;
 }
 
-#mobile-sidebar-backdrop,
-#section-sidebar-backdrop {
+#mobile-sidebar-backdrop {
   will-change: opacity;
 }
 

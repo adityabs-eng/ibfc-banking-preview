@@ -69,14 +69,13 @@
   <!-- Main Navigation Header -->
   <header id="main-header" class="sticky top-0 z-50 glass-header py-4 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between gap-2">
+      <div class="flex items-center justify-between gap-3">
         
-        <!-- Left Group: Mobile Section Sidebar Trigger + Brand Logo -->
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <!-- Top-Left Mobile In-Page Section Sidebar Button -->
-          <button id="mobile-section-btn" class="md:hidden flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-primary/10 hover:bg-primary hover:text-white text-primary transition focus:outline-none shrink-0 border border-primary/20" aria-label="Open Sections Jump Menu" title="Page Sections">
-            <i class="fa-solid fa-compass text-accent-amber text-xs"></i>
-            <span class="text-[11px] font-bold">Sections</span>
+        <!-- Left Group: 3-Lines Hamburger Menu Button + Brand Logo -->
+        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <!-- Mobile 3-Lines Hamburger Button (Top Left) -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none shrink-0" aria-label="Open Navigation Menu">
+            <i class="fa-solid fa-bars text-xl sm:text-2xl"></i>
           </button>
 
           <!-- Brand Logo -->
@@ -104,144 +103,21 @@
           <a href="contact.html" class="nav-link tablet-nav-link text-slate-600 text-xs lg:text-sm font-medium hover:text-primary transition py-1 px-1.5 whitespace-nowrap">Contact Us</a>
         </nav>
 
-        <!-- Header Action Group: CTA Button (Visible on ALL screens) + Mobile Hamburger -->
+        <!-- Header Action Group: CTA Button (Visible on ALL screens) -->
         <div class="flex items-center gap-2 sm:gap-3 shrink-0">
           <a href="partner.html#rfp-form" class="tablet-header-cta bg-primary hover:bg-primary-light text-white px-2.5 sm:px-4 lg:px-5 py-1.5 sm:py-2.5 rounded-lg text-xs lg:text-sm font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
             <span>Request Proposal</span>
             <i class="fa-solid fa-arrow-right text-[10px] sm:text-xs"></i>
           </a>
-
-          <!-- Mobile Menu Toggle Button (Visible on screen < md) -->
-          <div class="md:hidden flex items-center">
-            <button id="mobile-menu-btn" class="p-1.5 sm:p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
-              <i id="menu-icon" class="fa-solid fa-bars text-xl sm:text-2xl"></i>
-            </button>
-          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Left-Hand In-Page Section Sidebar Backdrop & Drawer (Mobile Top-Left) -->
-  <div id="section-sidebar-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0 pointer-events-none"></div>
-
-  <aside id="left-section-sidebar" class="fixed top-0 left-0 bottom-0 w-[85%] max-w-[320px] bg-white z-50 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out -translate-x-full overflow-hidden" aria-label="Page Sections Sidebar">
-    
-    <!-- Sidebar Header -->
-    <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-      <div class="flex items-center gap-2.5">
-        <div class="w-8 h-8 rounded-lg bg-primary text-accent-amber flex items-center justify-center text-xs shadow-sm">
-          <i class="fa-solid fa-compass"></i>
-        </div>
-        <div>
-          <span class="text-sm font-black text-primary leading-tight block">Page Sections</span>
-          <span class="text-[9px] uppercase tracking-wider font-bold text-slate-500 block">About IBFC Navigation</span>
-        </div>
-      </div>
-      <button id="close-section-sidebar-btn" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-primary flex items-center justify-center transition focus:outline-none" aria-label="Close Section Sidebar">
-        <i class="fa-solid fa-xmark text-sm"></i>
-      </button>
-    </div>
-
-    <!-- Sidebar Scrollable Body -->
-    <div class="flex-1 overflow-y-auto p-3.5 space-y-2">
-      <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1 px-1">Jump to About Section</span>
-      
-      <a href="#our-story" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
-        <div class="flex items-center gap-3">
-          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-primary text-xs">
-            <i class="fa-solid fa-book-open"></i>
-          </div>
-          <div>
-            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">Our Story &amp; Heritage</div>
-            <div class="text-[10px] text-slate-500">Founded 2014 in Patna, Bihar</div>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
-      </a>
-
-      <a href="#milestones" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
-        <div class="flex items-center gap-3">
-          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-accent-amber text-xs">
-            <i class="fa-solid fa-stairs"></i>
-          </div>
-          <div>
-            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">10-Year Milestones</div>
-            <div class="text-[10px] text-slate-500">From Regional Center to 25+ States</div>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
-      </a>
-
-      <a href="#founders" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
-        <div class="flex items-center gap-3">
-          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-emerald-600 text-xs">
-            <i class="fa-solid fa-users-line"></i>
-          </div>
-          <div>
-            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">Leadership &amp; Founders</div>
-            <div class="text-[10px] text-slate-500">Veteran Banking Pedigree</div>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
-      </a>
-
-      <a href="#founder-desk" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
-        <div class="flex items-center gap-3">
-          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-sky-600 text-xs">
-            <i class="fa-solid fa-quote-left"></i>
-          </div>
-          <div>
-            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">From Founder's Desk</div>
-            <div class="text-[10px] text-slate-500">Patna Corporate HQ Statement</div>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
-      </a>
-
-      <a href="#tab-life" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
-        <div class="flex items-center gap-3">
-          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-indigo-600 text-xs">
-            <i class="fa-solid fa-heart-pulse"></i>
-          </div>
-          <div>
-            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">Life at IBFC</div>
-            <div class="text-[10px] text-slate-500">5,000+ Team &amp; Women Empowerment</div>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
-      </a>
-
-      <a href="#tab-tech" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
-        <div class="flex items-center gap-3">
-          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-purple-600 text-xs">
-            <i class="fa-solid fa-server"></i>
-          </div>
-          <div>
-            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">Tech Infrastructure</div>
-            <div class="text-[10px] text-slate-500">Salesforce, Diallers, Security</div>
-          </div>
-        </div>
-        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
-      </a>
-    </div>
-
-    <!-- Sidebar Footer Action -->
-    <div class="p-3.5 border-t border-slate-200 bg-slate-50 space-y-2">
-      <a href="partner.html#rfp-form" class="w-full text-center block bg-primary hover:bg-primary-light text-white py-2 px-3 rounded-lg font-bold text-xs shadow transition flex items-center justify-center gap-1.5">
-        <span>Request Proposal</span>
-        <i class="fa-solid fa-arrow-right text-[10px]"></i>
-      </a>
-      <div class="text-[10px] text-slate-500 text-center">
-        Patna HQ: <a href="tel:+916122508800" class="text-primary font-bold hover:underline">+91 612 250 8800</a>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Mobile Navigation Off-Canvas Sidebar Backdrop & Drawer -->
+  <!-- Mobile Navigation Off-Canvas Sidebar (Slides in from Left on 3-lines menu click) -->
   <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0 pointer-events-none"></div>
 
-  <aside id="mobile-sidebar" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-[340px] bg-white z-50 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out translate-x-full overflow-hidden" aria-label="Mobile Navigation Sidebar">
+  <aside id="mobile-sidebar" class="fixed top-0 left-0 bottom-0 w-[85%] max-w-[340px] bg-white z-50 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out -translate-x-full overflow-hidden" aria-label="Mobile Navigation Sidebar">
     
     <!-- Sidebar Header -->
     <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
@@ -259,65 +135,102 @@
       </button>
     </div>
 
-    <!-- Sidebar Scrollable Body -->
-    <div class="flex-1 overflow-y-auto p-4 space-y-6">
+    <!-- Sidebar Scrollable Navigation Body -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-5">
       
-      <!-- Primary Pages Navigation -->
-      <div>
-        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2 px-2">Main Pages</span>
-        <nav class="space-y-1">
-          <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+      <!-- Primary Navigation Links -->
+      <nav class="space-y-1.5">
+        
+        <!-- Home -->
+        <a href="index.html" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+          <span class="flex items-center gap-3">
             <i class="fa-solid fa-house w-5 text-center text-primary"></i>
             <span>Home</span>
+          </span>
+          <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+        </a>
+
+        <!-- About Us (Active) -->
+        <div class="bg-primary/5 rounded-xl p-2 border border-primary/10">
+          <a href="about.html" class="flex items-center justify-between px-2.5 py-2 rounded-lg text-sm font-bold text-primary bg-white shadow-sm transition">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-building w-5 text-center text-accent-amber"></i>
+              <span>About Us</span>
+            </span>
+            <span class="text-[10px] bg-primary text-white font-bold px-2 py-0.5 rounded-full">Current</span>
           </a>
-          <a href="about.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-primary bg-primary/10 transition">
-            <i class="fa-solid fa-building w-5 text-center text-accent-amber"></i>
-            <span>About Us</span>
-          </a>
-          <a href="services.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+          <!-- Page Jumps under About Us -->
+          <div class="mt-2 space-y-1 pl-2 text-xs">
+            <a href="#our-story" class="flex items-center gap-2 py-1.5 px-2 rounded-lg text-slate-600 hover:text-primary hover:bg-white/80 transition">
+              <i class="fa-solid fa-circle text-[5px] text-accent-amber"></i>
+              <span>Our Story &amp; Heritage</span>
+            </a>
+            <a href="#milestones" class="flex items-center gap-2 py-1.5 px-2 rounded-lg text-slate-600 hover:text-primary hover:bg-white/80 transition">
+              <i class="fa-solid fa-circle text-[5px] text-emerald-500"></i>
+              <span>10-Year Milestones</span>
+            </a>
+            <a href="#founders" class="flex items-center gap-2 py-1.5 px-2 rounded-lg text-slate-600 hover:text-primary hover:bg-white/80 transition">
+              <i class="fa-solid fa-circle text-[5px] text-primary"></i>
+              <span>Leadership &amp; Founders</span>
+            </a>
+            <a href="#founder-desk" class="flex items-center gap-2 py-1.5 px-2 rounded-lg text-slate-600 hover:text-primary hover:bg-white/80 transition">
+              <i class="fa-solid fa-circle text-[5px] text-amber-500"></i>
+              <span>Message from MD</span>
+            </a>
+            <a href="#tab-life" class="flex items-center gap-2 py-1.5 px-2 rounded-lg text-slate-600 hover:text-primary hover:bg-white/80 transition">
+              <i class="fa-solid fa-circle text-[5px] text-rose-500"></i>
+              <span>Life at IBFC</span>
+            </a>
+            <a href="#tab-tech" class="flex items-center gap-2 py-1.5 px-2 rounded-lg text-slate-600 hover:text-primary hover:bg-white/80 transition">
+              <i class="fa-solid fa-circle text-[5px] text-sky-500"></i>
+              <span>Tech Infrastructure</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <a href="services.html" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+          <span class="flex items-center gap-3">
             <i class="fa-solid fa-layer-group w-5 text-center text-primary"></i>
             <span>Services</span>
-          </a>
-          <a href="partner.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+          </span>
+          <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+        </a>
+
+        <!-- Partner With Us -->
+        <a href="partner.html" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+          <span class="flex items-center gap-3">
             <i class="fa-solid fa-handshake w-5 text-center text-primary"></i>
             <span>Partner With Us</span>
-          </a>
-          <a href="contact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+          </span>
+          <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+        </a>
+
+        <!-- Contact Us -->
+        <a href="contact.html" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-primary transition">
+          <span class="flex items-center gap-3">
             <i class="fa-solid fa-headset w-5 text-center text-primary"></i>
             <span>Contact Us</span>
-          </a>
-        </nav>
+          </span>
+          <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+        </a>
+
+      </nav>
+
+      <!-- Institutional CTA Action -->
+      <div class="pt-2">
+        <a href="partner.html#rfp-form" class="w-full text-center block bg-primary hover:bg-primary-light text-white py-2.5 px-4 rounded-xl font-bold text-sm shadow transition flex items-center justify-center gap-2">
+          <span>Request Proposal</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
       </div>
 
-      <!-- Jump To Page Sections (Clean, categorized in sidebar) -->
-      <div class="pt-3 border-t border-slate-100">
-        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2 px-2">Jump to Page Section</span>
-        <div class="space-y-1 text-xs">
-          <a href="#our-story" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
-            <i class="fa-solid fa-circle text-[6px] text-accent-amber"></i>
-            <span>The IBFC Story (Patna)</span>
-          </a>
-          <a href="#milestones" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
-            <i class="fa-solid fa-circle text-[6px] text-emerald-500"></i>
-            <span>Our Milestones</span>
-          </a>
-          <a href="#founders" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
-            <i class="fa-solid fa-circle text-[6px] text-primary"></i>
-            <span>Founders &amp; Board</span>
-          </a>
-          <a href="#founder-desk" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
-            <i class="fa-solid fa-circle text-[6px] text-amber-500"></i>
-            <span>Message from MD</span>
-          </a>
-          <a href="#tab-life" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
-            <i class="fa-solid fa-circle text-[6px] text-rose-500"></i>
-            <span>Life at IBFC</span>
-          </a>
-          <a href="#tab-tech" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:text-primary hover:bg-slate-50 transition">
-            <i class="fa-solid fa-circle text-[6px] text-sky-500"></i>
-            <span>Technology &amp; Security</span>
-          </a>
-        </div>
+      <!-- Corporate Office Info in Sidebar -->
+      <div class="pt-3 border-t border-slate-100 text-xs text-slate-500 space-y-1.5">
+        <div class="font-bold text-slate-800">Patna Corporate HQ:</div>
+        <div>Plot No. 12, Fraser Road, Patna, Bihar - 800001</div>
+        <div>Phone: <a href="tel:+916122508800" class="text-primary font-bold hover:underline">+91 612 250 8800</a></div>
+        <div>Email: <a href="mailto:info@ibfcconsult.com" class="text-primary font-bold hover:underline">info@ibfcconsult.com</a></div>
       </div>
 
     </div>
