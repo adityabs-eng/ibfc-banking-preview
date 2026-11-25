@@ -29,7 +29,7 @@
   </script>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1B2PpLwq3x5p1Nn9KhrlN7p1GFhFdomcFZC2x5VgrxGk3i1Pj4lC2Nf3PzLMZw5q5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" />
   
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/custom.css">
@@ -74,8 +74,10 @@
         <!-- Left Group: 3-Lines Hamburger Menu Button + Brand Logo -->
         <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
           <!-- Mobile 3-Lines Hamburger Button (Top Left) -->
-          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none shrink-0" aria-label="Open Navigation Menu">
-            <i class="fa-solid fa-bars text-xl sm:text-2xl"></i>
+          <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-primary shrink-0 transition" aria-label="Open Navigation Menu" title="Menu">
+            <span class="w-5 h-0.5 bg-slate-800 rounded-full my-0.5 transition-all"></span>
+            <span class="w-5 h-0.5 bg-slate-800 rounded-full my-0.5 transition-all"></span>
+            <span class="w-5 h-0.5 bg-slate-800 rounded-full my-0.5 transition-all"></span>
           </button>
 
           <!-- Brand Logo -->
@@ -95,7 +97,7 @@
         </div>
 
         <!-- Desktop & Tablet Navigation (Well spaced on md: 768px - 1023px) -->
-        <nav class="hidden md:flex items-center gap-1.5 md:gap-2.5 lg:gap-5 xl:gap-7 shrink-0">
+        <nav class="hidden lg:flex items-center gap-1.5 md:gap-2.5 lg:gap-5 xl:gap-7 shrink-0">
           <a href="index.html" class="nav-link tablet-nav-link text-slate-600 text-xs lg:text-sm font-medium hover:text-primary transition py-1 px-1.5">Home</a>
           <a href="about.html" class="nav-link active tablet-nav-link text-xs lg:text-sm font-semibold hover:text-primary transition py-1 px-1.5">About Us</a>
           <a href="services.html" class="nav-link tablet-nav-link text-slate-600 text-xs lg:text-sm font-medium hover:text-primary transition py-1 px-1.5">Services</a>
