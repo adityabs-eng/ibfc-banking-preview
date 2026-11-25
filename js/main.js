@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimatedCounters();
   initTabs();
   initContactForms();
+  initSectionNavigator();
   setCurrentYear();
 });
 
@@ -301,4 +302,86 @@ function setCurrentYear() {
   yearSpans.forEach(span => {
     span.innerText = year;
   });
+}
+
+/* 8. Mobile Quick Section Navigator & Floating Jump Bar */
+function initSectionNavigator() {
+  // Mobile Quick Section Bar active tracking
+  const pills = document.querySelectorAll('.section-pill');
+  if (pills.length > 0) {
+    const sections = [];
+    pills.forEach(pill => {
+      const targetId = pill.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const el = document.querySelector(targetId);
+        if (el) sections.push({ id: targetId, el, pill });
+      }
+    });
+
+    if (sections.length > 0) {
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY + 130;
+        let current = sections[0];
+        for (let i = 0; i < sections.length; i++) {
+          if (sections[i].el.offsetTop <= scrollPos) {
+            current = sections[i];
+          }
+        }
+        pills.forEach(p => p.classList.remove('active'));
+        if (current && current.pill) {
+          current.pill.classList.add('active');
+        }
+      });
+    }
+  }
+
+  // Floating Quick Jump Drawer / Sheet
+  const openSheetBtn = document.getElementById('open-quick-jump');
+  const closeSheetBtn = document.getElementById('close-quick-jump');
+  const quickSheet = document.getElementById('quick-jump-sheet');
+  const scrollTopBtn = document.getElementById('scroll-to-top');
+
+  if (openSheetBtn && quickSheet) {
+    openSheetBtn.addEventListener('click', () => {
+      quickSheet.classList.remove('hidden');
+    });
+  }
+
+  if (closeSheetBtn && quickSheet) {
+    closeSheetBtn.addEventListener('click', () => {
+      quickSheet.classList.add('hidden');
+    });
+  }
+
+  if (quickSheet) {
+    quickSheet.addEventListener('click', (e) => {
+      if (e.target === quickSheet) {
+        quickSheet.classList.add('hidden');
+      }
+    });
+
+    const sheetLinks = quickSheet.querySelectorAll('a');
+    sheetLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        quickSheet.classList.add('hidden');
+      });
+    });
+  }
+
+  // Scroll to Top floating button
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+        scrollTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+      } else {
+        scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+        scrollTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }

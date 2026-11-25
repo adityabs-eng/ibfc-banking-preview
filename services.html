@@ -72,42 +72,42 @@
       <div class="flex items-center justify-between">
         
         <!-- Brand Logo -->
-        <a href="index.html" class="flex items-center gap-3 group">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-primary-dark via-primary to-accent-blue flex items-center justify-center text-white shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
-            <span class="font-extrabold text-2xl tracking-tighter">IB</span>
+        <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+          <div class="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-tr from-primary-dark via-primary to-accent-blue flex items-center justify-center text-white shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
+            <span class="font-extrabold text-lg sm:text-xl md:text-2xl tracking-tighter">IB</span>
           </div>
           <div class="flex flex-col">
-            <span class="text-2xl font-black text-primary tracking-tight group-hover:text-primary-light transition-colors">
+            <span class="text-xl sm:text-2xl font-black text-primary tracking-tight group-hover:text-primary-light transition-colors leading-none">
               IBFC<span class="text-accent-amber">.</span>
             </span>
-            <span class="text-[10px] uppercase tracking-widest font-bold text-slate-500">
+            <span class="hidden lg:block text-[9px] xl:text-[10px] uppercase tracking-widest font-bold text-slate-500 mt-0.5">
               Integrated Banking &amp; Financial Corp
             </span>
           </div>
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center gap-7">
-          <a href="index.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Home</a>
-          <a href="about.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">About Us</a>
-          <a href="services.html" class="nav-link active text-sm font-semibold hover:text-primary transition py-1">Services</a>
-          <a href="partner.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Partner With Us</a>
-          <a href="contact.html" class="nav-link text-slate-600 text-sm font-medium hover:text-primary transition py-1">Contact Us</a>
+        <!-- Desktop & Tablet Navigation (Well spaced on md: 768px - 1023px) -->
+        <nav class="hidden md:flex items-center gap-1.5 md:gap-2.5 lg:gap-5 xl:gap-7 shrink-0">
+          <a href="index.html" class="nav-link tablet-nav-link text-slate-600 text-xs lg:text-sm font-medium hover:text-primary transition py-1 px-1.5">Home</a>
+          <a href="about.html" class="nav-link tablet-nav-link text-slate-600 text-xs lg:text-sm font-medium hover:text-primary transition py-1 px-1.5">About Us</a>
+          <a href="services.html" class="nav-link active tablet-nav-link text-xs lg:text-sm font-semibold hover:text-primary transition py-1 px-1.5">Services</a>
+          <a href="partner.html" class="nav-link tablet-nav-link text-slate-600 text-xs lg:text-sm font-medium hover:text-primary transition py-1 px-1.5 whitespace-nowrap">Partner With Us</a>
+          <a href="contact.html" class="nav-link tablet-nav-link text-slate-600 text-xs lg:text-sm font-medium hover:text-primary transition py-1 px-1.5 whitespace-nowrap">Contact Us</a>
         </nav>
 
-        <!-- Header CTA Button -->
-        <div class="hidden md:flex items-center gap-4">
-          <a href="partner.html#rfp-form" class="bg-primary hover:bg-primary-light text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+        <!-- Header Action Group: CTA Button (Visible on ALL screens) + Mobile Hamburger -->
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <a href="partner.html#rfp-form" class="tablet-header-cta bg-primary hover:bg-primary-light text-white px-2.5 sm:px-4 lg:px-5 py-1.5 sm:py-2.5 rounded-lg text-xs lg:text-sm font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
             <span>Request Proposal</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
+            <i class="fa-solid fa-arrow-right text-[10px] sm:text-xs"></i>
           </a>
-        </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <div class="md:hidden flex items-center">
-          <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
-            <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
-          </button>
+          <!-- Mobile Menu Toggle Button (Visible on screen < md) -->
+          <div class="md:hidden flex items-center">
+            <button id="mobile-menu-btn" class="p-1.5 sm:p-2 rounded-lg text-slate-700 hover:text-primary hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
+              <i id="menu-icon" class="fa-solid fa-bars text-xl sm:text-2xl"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -126,6 +126,19 @@
       </div>
     </div>
   </header>
+
+  <!-- Mobile Quick Section Jumper (Sticky Horizontal Strip on Mobile/Small Tablet) -->
+  <div class="md:hidden bg-slate-900/95 backdrop-blur-md text-white border-b border-slate-800 py-2 px-3 sticky top-[64px] z-40 shadow-sm">
+    <div class="flex items-center gap-2 overflow-x-auto whitespace-nowrap scrollbar-none text-xs">
+      <span class="text-accent-amber font-bold flex items-center gap-1 shrink-0 pl-1 text-[11px]">
+        <i class="fa-solid fa-compass"></i> Solutions:
+      </span>
+      <a href="#debt-collection" class="section-pill px-2.5 py-1 rounded-full bg-white/10 hover:bg-primary border border-white/10 text-slate-200 hover:text-white shrink-0 transition text-[11px]">Debt Collection</a>
+      <a href="#debt-initiation" class="section-pill px-2.5 py-1 rounded-full bg-white/10 hover:bg-primary border border-white/10 text-slate-200 hover:text-white shrink-0 transition text-[11px]">Loan Sourcing</a>
+      <a href="#client-servicing" class="section-pill px-2.5 py-1 rounded-full bg-white/10 hover:bg-primary border border-white/10 text-slate-200 hover:text-white shrink-0 transition text-[11px]">Customer Support</a>
+      <a href="#inquiry-section" class="section-pill px-2.5 py-1 rounded-full bg-accent-amber/20 hover:bg-accent-amber text-amber-300 hover:text-slate-900 border border-accent-amber/40 shrink-0 transition text-[11px] font-semibold">Request Proposal</a>
+    </div>
+  </div>
 
   <!-- Page Banner (Matching VGM reference: "We Offer You a One Stop Solution") -->
   <section class="relative h-[38vh] sm:h-[48vh] min-h-[260px] sm:min-h-[340px] bg-slate-900 flex items-center justify-center text-center overflow-hidden">
@@ -549,6 +562,66 @@
       <button class="close-modal-btn w-full bg-primary hover:bg-primary-light text-white font-semibold py-3 px-6 rounded-xl transition shadow">
         Close &amp; Continue
       </button>
+    </div>
+  </div>
+
+  <!-- Floating Mobile Quick Action Controls (Bottom Right) -->
+  <div class="fixed bottom-5 right-4 z-40 flex flex-col items-end gap-2.5">
+    <!-- Scroll To Top Button -->
+    <button id="scroll-to-top" class="opacity-0 pointer-events-none w-10 h-10 rounded-full bg-slate-900/90 text-white border border-slate-700 shadow-lg flex items-center justify-center hover:bg-primary transition-all duration-300" aria-label="Scroll to Top">
+      <i class="fa-solid fa-arrow-up text-xs"></i>
+    </button>
+    <!-- Quick Jump Pill Button (Mobile & Tablet) -->
+    <button id="open-quick-jump" class="md:hidden floating-widget-btn bg-primary hover:bg-primary-light text-white px-3.5 py-2.5 rounded-full text-xs font-bold shadow-xl flex items-center gap-2 border border-sky-400/30 transition-transform active:scale-95" aria-label="Open Section Jump Drawer">
+      <i class="fa-solid fa-bars-staggered text-accent-amber text-xs"></i>
+      <span>Sections</span>
+    </button>
+  </div>
+
+  <!-- Mobile Quick Jump Bottom Sheet Drawer -->
+  <div id="quick-jump-sheet" class="hidden fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-end justify-center transition-all">
+    <div class="bg-white rounded-t-3xl w-full max-w-lg p-5 border-t border-slate-200 shadow-2xl animate-slide-up max-h-[80vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-primary text-accent-amber flex items-center justify-center text-xs">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <span class="font-bold text-slate-900 text-sm">Jump to Services Section</span>
+        </div>
+        <button id="close-quick-jump" class="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      
+      <div class="grid grid-cols-2 gap-2 text-xs">
+        <a href="#debt-collection" class="p-3 rounded-xl bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 transition group flex flex-col gap-1">
+          <div class="font-bold text-slate-800 group-hover:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-hand-holding-dollar text-accent-amber"></i> Debt Collection
+          </div>
+          <span class="text-[10px] text-slate-500 group-hover:text-slate-200">Delinquent Recovery</span>
+        </a>
+
+        <a href="#debt-initiation" class="p-3 rounded-xl bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 transition group flex flex-col gap-1">
+          <div class="font-bold text-slate-800 group-hover:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-file-invoice-dollar text-primary"></i> Debt Initiation
+          </div>
+          <span class="text-[10px] text-slate-500 group-hover:text-slate-200">Loan Sourcing &amp; Lead Gen</span>
+        </a>
+
+        <a href="#client-servicing" class="p-3 rounded-xl bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 transition group flex flex-col gap-1">
+          <div class="font-bold text-slate-800 group-hover:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-headset text-sky-600"></i> Client Servicing
+          </div>
+          <span class="text-[10px] text-slate-500 group-hover:text-slate-200">Inbound &amp; Third-Party (TPV)</span>
+        </a>
+
+        <a href="#inquiry-section" class="p-3 rounded-xl bg-amber-50 hover:bg-accent-amber hover:text-slate-900 border border-amber-200 transition group flex flex-col gap-1">
+          <div class="font-bold text-amber-900 group-hover:text-slate-900 flex items-center gap-1.5">
+            <i class="fa-solid fa-paper-plane"></i> Request Proposal
+          </div>
+          <span class="text-[10px] text-amber-700 group-hover:text-slate-900">Customized BFSI Solution</span>
+        </a>
+      </div>
     </div>
   </div>
 
