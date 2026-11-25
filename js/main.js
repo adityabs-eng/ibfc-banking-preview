@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileSidebar();
+  initSectionSidebar();
   initStickyHeader();
   initHeroSlider();
   initAnimatedCounters();
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setCurrentYear();
 });
 
-/* 1. Mobile Navigation Off-Canvas Sidebar */
+/* 1. Mobile Navigation Off-Canvas Sidebar (Main Pages) */
 function initMobileSidebar() {
   const toggleBtn = document.getElementById('mobile-menu-btn');
   const closeBtn = document.getElementById('close-sidebar-btn');
@@ -51,6 +52,56 @@ function initMobileSidebar() {
   // Close sidebar when any link inside it is clicked
   const sidebarLinks = sidebar.querySelectorAll('a');
   sidebarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeSidebar();
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sidebar.classList.contains('translate-x-0')) {
+      closeSidebar();
+    }
+  });
+}
+
+/* 1B. Mobile Top-Left Section Sidebar Navigation (Quick Jump Between In-Page Sections) */
+function initSectionSidebar() {
+  const openBtn = document.getElementById('mobile-section-btn');
+  const closeBtn = document.getElementById('close-section-sidebar-btn');
+  const sidebar = document.getElementById('left-section-sidebar');
+  const backdrop = document.getElementById('section-sidebar-backdrop');
+
+  if (!sidebar) return;
+
+  function openSidebar() {
+    sidebar.classList.remove('-translate-x-full');
+    sidebar.classList.add('translate-x-0');
+    if (backdrop) {
+      backdrop.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100', 'pointer-events-auto');
+    }
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('translate-x-0');
+    sidebar.classList.add('-translate-x-full');
+    if (backdrop) {
+      backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => backdrop.classList.add('hidden'), 300);
+    }
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  if (openBtn) openBtn.addEventListener('click', openSidebar);
+  if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+  // Close when any section link inside it is clicked
+  const links = sidebar.querySelectorAll('a');
+  links.forEach(link => {
     link.addEventListener('click', () => {
       closeSidebar();
     });

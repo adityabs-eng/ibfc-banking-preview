@@ -202,10 +202,36 @@ section, [id] {
 }
 
 /* Off-canvas sidebar transition */
-#mobile-sidebar {
+#mobile-sidebar,
+#left-section-sidebar {
   will-change: transform;
 }
 
-#mobile-sidebar-backdrop {
+#mobile-sidebar-backdrop,
+#section-sidebar-backdrop {
   will-change: opacity;
+}
+
+/* Tablet Card Polishing & Balance (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tablet-card {
+    padding: 1.25rem !important; /* 20px instead of 32px */
+  }
+  .tablet-card h3, .tablet-card h4 {
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+  }
+  .tablet-card p {
+    font-size: 0.8125rem !important;
+    line-height: 1.5 !important;
+  }
+  .tablet-equal-height {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+  }
+  .tablet-founder-card {
+    padding: 1.25rem !important;
+  }
 }

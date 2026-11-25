@@ -69,22 +69,31 @@
   <!-- Main Navigation Header -->
   <header id="main-header" class="sticky top-0 z-50 glass-header py-4 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between gap-2">
         
-        <!-- Brand Logo -->
-        <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink-0">
-          <div class="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-tr from-primary-dark via-primary to-accent-blue flex items-center justify-center text-white shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
-            <span class="font-extrabold text-lg sm:text-xl md:text-2xl tracking-tighter">IB</span>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-xl sm:text-2xl font-black text-primary tracking-tight group-hover:text-primary-light transition-colors leading-none">
-              IBFC<span class="text-accent-amber">.</span>
-            </span>
-            <span class="hidden lg:block text-[9px] xl:text-[10px] uppercase tracking-widest font-bold text-slate-500 mt-0.5">
-              Integrated Banking &amp; Financial Corp
-            </span>
-          </div>
-        </a>
+        <!-- Left Group: Mobile Section Sidebar Trigger + Brand Logo -->
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <!-- Top-Left Mobile In-Page Section Sidebar Button -->
+          <button id="mobile-section-btn" class="md:hidden flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-primary/10 hover:bg-primary hover:text-white text-primary transition focus:outline-none shrink-0 border border-primary/20" aria-label="Open Sections Jump Menu" title="Page Sections">
+            <i class="fa-solid fa-compass text-accent-amber text-xs"></i>
+            <span class="text-[11px] font-bold">Sections</span>
+          </button>
+
+          <!-- Brand Logo -->
+          <a href="index.html" class="flex items-center gap-2 sm:gap-3 group shrink-0">
+            <div class="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-tr from-primary-dark via-primary to-accent-blue flex items-center justify-center text-white shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
+              <span class="font-extrabold text-lg sm:text-xl md:text-2xl tracking-tighter">IB</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xl sm:text-2xl font-black text-primary tracking-tight group-hover:text-primary-light transition-colors leading-none">
+                IBFC<span class="text-accent-amber">.</span>
+              </span>
+              <span class="hidden lg:block text-[9px] xl:text-[10px] uppercase tracking-widest font-bold text-slate-500 mt-0.5">
+                Integrated Banking &amp; Financial Corp
+              </span>
+            </div>
+          </a>
+        </div>
 
         <!-- Desktop & Tablet Navigation (Well spaced on md: 768px - 1023px) -->
         <nav class="hidden md:flex items-center gap-1.5 md:gap-2.5 lg:gap-5 xl:gap-7 shrink-0">
@@ -112,6 +121,122 @@
       </div>
     </div>
   </header>
+
+  <!-- Left-Hand In-Page Section Sidebar Backdrop & Drawer (Mobile Top-Left) -->
+  <div id="section-sidebar-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+
+  <aside id="left-section-sidebar" class="fixed top-0 left-0 bottom-0 w-[85%] max-w-[320px] bg-white z-50 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-in-out -translate-x-full overflow-hidden" aria-label="Page Sections Sidebar">
+    
+    <!-- Sidebar Header -->
+    <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-primary text-accent-amber flex items-center justify-center text-xs shadow-sm">
+          <i class="fa-solid fa-compass"></i>
+        </div>
+        <div>
+          <span class="text-sm font-black text-primary leading-tight block">Page Sections</span>
+          <span class="text-[9px] uppercase tracking-wider font-bold text-slate-500 block">Quick In-Page Jump</span>
+        </div>
+      </div>
+      <button id="close-section-sidebar-btn" class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-600 hover:text-primary flex items-center justify-center transition focus:outline-none" aria-label="Close Section Sidebar">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+    </div>
+
+    <!-- Sidebar Scrollable Body (List of Sections) -->
+    <div class="flex-1 overflow-y-auto p-3.5 space-y-2">
+      <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1 px-1">Jump to Home Section</span>
+      
+      <a href="#who-we-are" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-primary text-xs">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">Who We Are</div>
+            <div class="text-[10px] text-slate-500">Corporate Overview &amp; Patna HQ</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
+      </a>
+
+      <a href="#why-choose-us" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-accent-amber text-xs">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">Why Choose IBFC</div>
+            <div class="text-[10px] text-slate-500">6 Institutional Pillars</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
+      </a>
+
+      <a href="#impact-counters" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-emerald-600 text-xs">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">Impact Numbers</div>
+            <div class="text-[10px] text-slate-500">₹750+ Cr Quarterly Scale</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
+      </a>
+
+      <a href="#banking-partners" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-sky-600 text-xs">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">Banking Partners</div>
+            <div class="text-[10px] text-slate-500">Scheduled Commercial Alliances</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
+      </a>
+
+      <a href="#services-overview" class="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-primary/5 hover:border-primary border border-slate-200 transition group">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-lg bg-white shadow-sm flex items-center justify-center text-indigo-600 text-xs">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-800 group-hover:text-primary transition">Services Overview</div>
+            <div class="text-[10px] text-slate-500">Debt Recovery, Sourcing, TPV</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:text-primary transition"></i>
+      </a>
+
+      <a href="#consultation-cta" class="flex items-center justify-between p-3 rounded-xl bg-amber-50 hover:bg-accent-amber/20 hover:border-accent-amber border border-amber-200 transition group">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 rounded-lg bg-accent-amber text-slate-900 shadow-sm flex items-center justify-center text-xs">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-amber-900 group-hover:text-slate-900 transition">Request Consultation</div>
+            <div class="text-[10px] text-amber-700">Submit Institutional RFP</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-[10px] text-amber-600 group-hover:text-slate-900 transition"></i>
+      </a>
+    </div>
+
+    <!-- Sidebar Footer Action -->
+    <div class="p-3.5 border-t border-slate-200 bg-slate-50 space-y-2">
+      <a href="partner.html#rfp-form" class="w-full text-center block bg-primary hover:bg-primary-light text-white py-2 px-3 rounded-lg font-bold text-xs shadow transition flex items-center justify-center gap-1.5">
+        <span>Request Proposal</span>
+        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+      </a>
+      <div class="text-[10px] text-slate-500 text-center">
+        Patna HQ: <a href="tel:+916122508800" class="text-primary font-bold hover:underline">+91 612 250 8800</a>
+      </div>
+    </div>
+  </aside>
 
   <!-- Mobile Navigation Off-Canvas Sidebar Backdrop & Drawer -->
   <div id="mobile-sidebar-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0 pointer-events-none"></div>
@@ -455,105 +580,105 @@
       </div>
 
       <!-- 6-Card Grid matching VGM reference with modern refinements -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-8">
         
         <!-- Card 1 -->
-        <div class="bg-white rounded-2xl p-5 sm:p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-5 md:p-6 lg:p-8 border border-slate-200 shadow-sm card-hover tablet-card tablet-equal-height">
           <div>
-            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-sky-50 text-primary flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
+            <div class="w-12 h-12 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl bg-sky-50 text-primary flex items-center justify-center text-xl md:text-xl lg:text-2xl mb-3.5 md:mb-5">
               <i class="fa-solid fa-award text-primary"></i>
             </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3">Unmatched Quality Focus</h3>
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            <h3 class="text-lg md:text-base lg:text-xl font-bold text-primary mb-2 sm:mb-2.5">Unmatched Quality Focus</h3>
+            <p class="text-slate-600 text-xs md:text-xs lg:text-sm leading-relaxed">
               IBFC delivers uncompromising excellence in compliance and risk mitigation. Built-in quality auditors and AI-assisted speech analytics ensure high-fidelity interactions at every turn.
             </p>
           </div>
-          <div class="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-primary">
+          <div class="mt-4 md:mt-5 pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] md:text-[11px] lg:text-xs font-semibold text-primary">
             <span>ISO 9001:2015 Benchmark</span>
             <i class="fa-solid fa-check-double text-emerald-500"></i>
           </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-white rounded-2xl p-5 sm:p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-5 md:p-6 lg:p-8 border border-slate-200 shadow-sm card-hover tablet-card tablet-equal-height">
           <div>
-            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-amber-50 text-accent-amber flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
+            <div class="w-12 h-12 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl bg-amber-50 text-accent-amber flex items-center justify-center text-xl md:text-xl lg:text-2xl mb-3.5 md:mb-5">
               <i class="fa-solid fa-map-location-dot text-amber-600"></i>
             </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3">Pan-India Presence</h3>
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            <h3 class="text-lg md:text-base lg:text-xl font-bold text-primary mb-2 sm:mb-2.5">Pan-India Presence</h3>
+            <p class="text-slate-600 text-xs md:text-xs lg:text-sm leading-relaxed">
               Headquartered in Patna with decentralized operations across 8 strategic hubs including Delhi NCR, Kolkata, Mumbai, Bengaluru, Chennai, and Hyderabad, providing deep localized reach.
             </p>
           </div>
-          <div class="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-primary">
+          <div class="mt-4 md:mt-5 pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] md:text-[11px] lg:text-xs font-semibold text-primary">
             <span>Covering 25+ Indian States</span>
             <i class="fa-solid fa-location-arrow text-amber-500"></i>
           </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-white rounded-2xl p-5 sm:p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-5 md:p-6 lg:p-8 border border-slate-200 shadow-sm card-hover tablet-card tablet-equal-height">
           <div>
-            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
+            <div class="w-12 h-12 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl md:text-xl lg:text-2xl mb-3.5 md:mb-5">
               <i class="fa-solid fa-robot text-indigo-600"></i>
             </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3">Tech-Driven Processes</h3>
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            <h3 class="text-lg md:text-base lg:text-xl font-bold text-primary mb-2 sm:mb-2.5">Tech-Driven Processes</h3>
+            <p class="text-slate-600 text-xs md:text-xs lg:text-sm leading-relaxed">
               Enterprise Salesforce CRM integration, Vicidial/Ameyo predictive auto-diallers, PRI/SIP trunks, licensed Truecaller verified badges, and real-time client analytics dashboards.
             </p>
           </div>
-          <div class="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-primary">
+          <div class="mt-4 md:mt-5 pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] md:text-[11px] lg:text-xs font-semibold text-primary">
             <span>API &amp; Real-Time Integration</span>
             <i class="fa-solid fa-bolt text-indigo-500"></i>
           </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="bg-white rounded-2xl p-5 sm:p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-5 md:p-6 lg:p-8 border border-slate-200 shadow-sm card-hover tablet-card tablet-equal-height">
           <div>
-            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
+            <div class="w-12 h-12 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center text-xl md:text-xl lg:text-2xl mb-3.5 md:mb-5">
               <i class="fa-solid fa-language text-teal-600"></i>
             </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3">Multi-Lingual Workforce</h3>
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            <h3 class="text-lg md:text-base lg:text-xl font-bold text-primary mb-2 sm:mb-2.5">Multi-Lingual Workforce</h3>
+            <p class="text-slate-600 text-xs md:text-xs lg:text-sm leading-relaxed">
               Over 5,000 telecommunicators and field executives fluent across 14+ Indian regional languages, facilitating empathetic communication, cultural affinity, and frictionless resolution.
             </p>
           </div>
-          <div class="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-primary">
+          <div class="mt-4 md:mt-5 pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] md:text-[11px] lg:text-xs font-semibold text-primary">
             <span>14+ Languages Native Support</span>
             <i class="fa-solid fa-comments text-teal-500"></i>
           </div>
         </div>
 
         <!-- Card 5 -->
-        <div class="bg-white rounded-2xl p-5 sm:p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-5 md:p-6 lg:p-8 border border-slate-200 shadow-sm card-hover tablet-card tablet-equal-height">
           <div>
-            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
+            <div class="w-12 h-12 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl md:text-xl lg:text-2xl mb-3.5 md:mb-5">
               <i class="fa-solid fa-people-arrows text-emerald-600"></i>
             </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3">Hybrid Collection Model</h3>
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            <h3 class="text-lg md:text-base lg:text-xl font-bold text-primary mb-2 sm:mb-2.5">Hybrid Collection Model</h3>
+            <p class="text-slate-600 text-xs md:text-xs lg:text-sm leading-relaxed">
               Synergistic execution pairing data-backed telecalling with geo-tagged on-ground field tracing and doorstep documentation for hard-to-reach delinquent accounts.
             </p>
           </div>
-          <div class="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-primary">
+          <div class="mt-4 md:mt-5 pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] md:text-[11px] lg:text-xs font-semibold text-primary">
             <span>Seamless Tele + Field Cohesion</span>
             <i class="fa-solid fa-arrows-split-up-and-left text-emerald-500"></i>
           </div>
         </div>
 
         <!-- Card 6 -->
-        <div class="bg-white rounded-2xl p-5 sm:p-8 border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+        <div class="bg-white rounded-2xl p-5 md:p-6 lg:p-8 border border-slate-200 shadow-sm card-hover tablet-card tablet-equal-height">
           <div>
-            <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6">
+            <div class="w-12 h-12 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-xl md:rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl md:text-xl lg:text-2xl mb-3.5 md:mb-5">
               <i class="fa-solid fa-graduation-cap text-rose-600"></i>
             </div>
-            <h3 class="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3">IBFC Excellence Academy</h3>
-            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            <h3 class="text-lg md:text-base lg:text-xl font-bold text-primary mb-2 sm:mb-2.5">IBFC Excellence Academy</h3>
+            <p class="text-slate-600 text-xs md:text-xs lg:text-sm leading-relaxed">
               Continuous specialized training in DRA (Debt Recovery Agent) certification, BFSI regulations, conflict de-escalation, emotional intelligence, and data confidentiality standards.
             </p>
           </div>
-          <div class="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-slate-100 flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-primary">
+          <div class="mt-4 md:mt-5 pt-3 border-t border-slate-100 flex items-center gap-2 text-[11px] md:text-[11px] lg:text-xs font-semibold text-primary">
             <span>Certified &amp; DRA Trained Staff</span>
             <i class="fa-solid fa-user-check text-rose-500"></i>
           </div>
@@ -570,30 +695,30 @@
     <div class="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary/90 to-primary-dark"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 lg:gap-12 text-center">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-8 text-center">
         
-        <div class="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-          <div class="text-2xl sm:text-4xl lg:text-5xl font-black text-accent-amber mb-1 sm:mb-2 counter-value" data-prefix="₹ " data-target="750" data-suffix="+ Cr">₹ 750+ Cr</div>
-          <h4 class="text-xs sm:text-base lg:text-lg font-bold text-white mb-0.5 sm:mb-1">Recovered Per Quarter</h4>
-          <p class="text-[10px] sm:text-xs text-slate-300">Substantial cash inflow acceleration for banking balance sheets.</p>
+        <div class="p-3.5 md:p-4 lg:p-6 rounded-xl md:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 tablet-card flex flex-col justify-center">
+          <div class="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-black text-accent-amber mb-1 counter-value" data-prefix="₹ " data-target="750" data-suffix="+ Cr">₹ 750+ Cr</div>
+          <h4 class="text-xs md:text-xs lg:text-base font-bold text-white mb-0.5">Recovered Per Quarter</h4>
+          <p class="text-[10px] md:text-[10px] lg:text-xs text-slate-300">Substantial cash inflow acceleration for banking balance sheets.</p>
         </div>
 
-        <div class="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-          <div class="text-2xl sm:text-4xl lg:text-5xl font-black text-white mb-1 sm:mb-2 counter-value" data-target="35" data-suffix="+ Lakh">35+ Lakh</div>
-          <h4 class="text-xs sm:text-base lg:text-lg font-bold text-white mb-0.5 sm:mb-1">Accounts Resolved</h4>
-          <p class="text-[10px] sm:text-xs text-slate-300">Successfully settled customer retail portfolios nationwide.</p>
+        <div class="p-3.5 md:p-4 lg:p-6 rounded-xl md:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 tablet-card flex flex-col justify-center">
+          <div class="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-black text-white mb-1 counter-value" data-target="35" data-suffix="+ Lakh">35+ Lakh</div>
+          <h4 class="text-xs md:text-xs lg:text-base font-bold text-white mb-0.5">Accounts Resolved</h4>
+          <p class="text-[10px] md:text-[10px] lg:text-xs text-slate-300">Successfully settled customer retail portfolios nationwide.</p>
         </div>
 
-        <div class="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-          <div class="text-2xl sm:text-4xl lg:text-5xl font-black text-sky-400 mb-1 sm:mb-2 counter-value" data-target="99" data-suffix=".4%">99.4%</div>
-          <h4 class="text-xs sm:text-base lg:text-lg font-bold text-white mb-0.5 sm:mb-1">Compliance Score</h4>
-          <p class="text-[10px] sm:text-xs text-slate-300">Zero tolerance for unethical or unauthorized debt practices.</p>
+        <div class="p-3.5 md:p-4 lg:p-6 rounded-xl md:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 tablet-card flex flex-col justify-center">
+          <div class="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-black text-sky-400 mb-1 counter-value" data-target="99" data-suffix=".4%">99.4%</div>
+          <h4 class="text-xs md:text-xs lg:text-base font-bold text-white mb-0.5">Compliance Score</h4>
+          <p class="text-[10px] md:text-[10px] lg:text-xs text-slate-300">Zero tolerance for unethical or unauthorized debt practices.</p>
         </div>
 
-        <div class="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-          <div class="text-2xl sm:text-4xl lg:text-5xl font-black text-emerald-400 mb-1 sm:mb-2 counter-value" data-target="8" data-suffix=" Hubs">8 Hubs</div>
-          <h4 class="text-xs sm:text-base lg:text-lg font-bold text-white mb-0.5 sm:mb-1">State-of-the-Art Centers</h4>
-          <p class="text-[10px] sm:text-xs text-slate-300">Fully equipped BPO infrastructures with high-redundancy IT.</p>
+        <div class="p-3.5 md:p-4 lg:p-6 rounded-xl md:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 tablet-card flex flex-col justify-center">
+          <div class="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-black text-emerald-400 mb-1 counter-value" data-target="8" data-suffix=" Hubs">8 Hubs</div>
+          <h4 class="text-xs md:text-xs lg:text-base font-bold text-white mb-0.5">State-of-the-Art Centers</h4>
+          <p class="text-[10px] md:text-[10px] lg:text-xs text-slate-300">Fully equipped BPO infrastructures with high-redundancy IT.</p>
         </div>
 
       </div>
@@ -706,85 +831,91 @@
         </a>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 lg:gap-8">
         
         <!-- Service Preview Card 1 -->
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm card-hover flex flex-col">
-          <div class="h-44 sm:h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=700&q=80" alt="Debt Collection" class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 bg-primary text-white text-[11px] font-bold px-3 py-1 rounded-full">
-              Core Specialty
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm card-hover flex flex-col h-full justify-between">
+          <div>
+            <div class="h-40 sm:h-44 md:h-36 lg:h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=700&q=80" alt="Debt Collection" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 bg-primary text-white text-[10px] md:text-[10px] lg:text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
+                Core Specialty
+              </div>
             </div>
-          </div>
-          <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg sm:text-xl font-bold text-primary mb-2">Delinquent Debt Collection</h3>
-              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+            <div class="p-4 md:p-4.5 lg:p-6">
+              <h3 class="text-lg md:text-base lg:text-xl font-bold text-primary mb-1.5 md:mb-2">Delinquent Debt Collection</h3>
+              <p class="text-slate-600 text-xs md:text-xs lg:text-sm leading-relaxed mb-3 md:mb-4">
                 Accelerating cash inflow through empathetic, compliant, and data-backed recovery across early bucket (1-30 DPD) to write-off recovery stages.
               </p>
-              <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Auto-Diallers &amp; Call Recording</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Geo-tagged Field Verification</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> 100% DRA Certified Telecommunicators</li>
+              <ul class="text-xs md:text-[11px] lg:text-xs text-slate-600 space-y-1 md:space-y-1 mb-4 md:mb-5">
+                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> Auto-Diallers &amp; Call Recording</li>
+                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> Geo-tagged Field Verification</li>
+                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> 100% DRA Certified Staff</li>
               </ul>
             </div>
-            <a href="services.html#debt-collection" class="text-primary font-bold text-xs sm:text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
+          </div>
+          <div class="px-4 pb-4 md:px-4.5 md:pb-4.5 lg:px-6 lg:pb-6 pt-0">
+            <a href="services.html#debt-collection" class="text-primary font-bold text-xs md:text-xs lg:text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all">
               <span>Read Details</span>
-              <i class="fa-solid fa-arrow-right text-xs"></i>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
 
         <!-- Service Preview Card 2 -->
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm card-hover flex flex-col">
-          <div class="h-44 sm:h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80" alt="Debt Initiation & Loan Sourcing" class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 bg-accent-amber text-slate-900 text-[11px] font-bold px-3 py-1 rounded-full">
-              Growth Engine
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm card-hover flex flex-col h-full justify-between">
+          <div>
+            <div class="h-40 sm:h-44 md:h-36 lg:h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=700&q=80" alt="Debt Initiation & Loan Sourcing" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 bg-accent-amber text-slate-900 text-[10px] md:text-[10px] lg:text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
+                Growth Engine
+              </div>
             </div>
-          </div>
-          <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg sm:text-xl font-bold text-primary mb-2">Debt Initiation &amp; Loan Sourcing</h3>
-              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+            <div class="p-4 md:p-4.5 lg:p-6">
+              <h3 class="text-lg md:text-base lg:text-xl font-bold text-primary mb-1.5 md:mb-2">Debt Initiation &amp; Sourcing</h3>
+              <p class="text-slate-600 text-xs md:text-xs lg:text-sm leading-relaxed mb-3 md:mb-4">
                 Cross-selling, upselling, and targeted retail loan origination for personal, business, gold, and vehicle credit portfolios.
               </p>
-              <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> High-Intent Lead Generation</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Multi-Lingual Product Pitching</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Pre-Screening &amp; Document Pickup</li>
+              <ul class="text-xs md:text-[11px] lg:text-xs text-slate-600 space-y-1 md:space-y-1 mb-4 md:mb-5">
+                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> High-Intent Lead Generation</li>
+                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> Multi-Lingual Product Pitching</li>
+                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> Pre-Screening &amp; Doc Pickup</li>
               </ul>
             </div>
-            <a href="services.html#debt-initiation" class="text-primary font-bold text-xs sm:text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
+          </div>
+          <div class="px-4 pb-4 md:px-4.5 md:pb-4.5 lg:px-6 lg:pb-6 pt-0">
+            <a href="services.html#debt-initiation" class="text-primary font-bold text-xs md:text-xs lg:text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all">
               <span>Read Details</span>
-              <i class="fa-solid fa-arrow-right text-xs"></i>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
 
         <!-- Service Preview Card 3 -->
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm card-hover flex flex-col">
-          <div class="h-44 sm:h-48 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="Client Servicing & Inbound" class="w-full h-full object-cover">
-            <div class="absolute top-4 left-4 bg-sky-600 text-white text-[11px] font-bold px-3 py-1 rounded-full">
-              Customer Lifecycle
+        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm card-hover flex flex-col h-full justify-between">
+          <div>
+            <div class="h-40 sm:h-44 md:h-36 lg:h-48 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="Client Servicing & Inbound" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 bg-sky-600 text-white text-[10px] md:text-[10px] lg:text-[11px] font-bold px-2.5 py-1 rounded-full shadow">
+                Customer Lifecycle
+              </div>
             </div>
-          </div>
-          <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg sm:text-xl font-bold text-primary mb-2">Customer Lifecycle &amp; Inbound</h3>
-              <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+            <div class="p-4 md:p-4.5 lg:p-6">
+              <h3 class="text-lg md:text-base lg:text-xl font-bold text-primary mb-1.5 md:mb-2">Customer Lifecycle &amp; Inbound</h3>
+              <p class="text-slate-600 text-xs md:text-xs lg:text-sm leading-relaxed mb-3 md:mb-4">
                 End-to-end customer care, helpline management, third-party verification (TPV), and loan servicing operations for financial institutions.
               </p>
-              <ul class="text-xs text-slate-600 space-y-1.5 mb-6">
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> 24/7 Dedicated Inbound Helplines</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Third-Party Address &amp; Doc Verification</li>
-                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Strict SLA Governance &amp; NPS Tracking</li>
+              <ul class="text-xs md:text-[11px] lg:text-xs text-slate-600 space-y-1 md:space-y-1 mb-4 md:mb-5">
+                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> 24/7 Dedicated Inbound Helplines</li>
+                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> Third-Party Address Verification</li>
+                <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-600"></i> Strict SLA Governance &amp; NPS</li>
               </ul>
             </div>
-            <a href="services.html#client-servicing" class="text-primary font-bold text-xs sm:text-sm inline-flex items-center gap-2 hover:gap-3 transition-all">
+          </div>
+          <div class="px-4 pb-4 md:px-4.5 md:pb-4.5 lg:px-6 lg:pb-6 pt-0">
+            <a href="services.html#client-servicing" class="text-primary font-bold text-xs md:text-xs lg:text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all">
               <span>Read Details</span>
-              <i class="fa-solid fa-arrow-right text-xs"></i>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
         </div>
